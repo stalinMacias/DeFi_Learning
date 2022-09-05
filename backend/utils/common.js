@@ -37,7 +37,8 @@ async function getContract(web3js,contractJSON) {
 }
 
 async function generateTransactionsOptions(transactionDefined, transactionSenderAddress, web3js) {
-  const hardcodingRequiredGas = web3js.utils.toWei('0.0000000000002', 'ether')
+  //const hardcodingRequiredGas = web3js.utils.toWei('0.0000000000002', 'ether')
+
   // Getting the account's current nonce
   const accountNonce = await web3js.eth.getTransactionCount(transactionSenderAddress)
 
@@ -46,8 +47,8 @@ async function generateTransactionsOptions(transactionDefined, transactionSender
     nonce: accountNonce,
     to      : transactionDefined._parent._address,  // contract's address
     data    : transactionDefined.encodeABI(),
-    //gas     : await transactionDefined.estimateGas({from: ownerAddress}) <----> For some reasong the estimateGas() seems not to be working!
-    gas     : hardcodingRequiredGas,
+    gas     : await transactionDefined.estimateGas({from: transactionSenderAddress}) //<----> For some reasong the estimateGas() seems not to be working!
+    //gas     : hardcodingRequiredGas,
   };
 
   console.log(options);
