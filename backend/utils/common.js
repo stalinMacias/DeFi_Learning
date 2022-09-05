@@ -81,6 +81,7 @@ async function sendingSignedTransactions(signedTransaction, web3js, txDescriptio
       .then(function(receipt){
           console.log("Transaction completed! - ", txDescriptionMessage);
           console.log(receipt);
+          return receipt;
       });
   } catch (error) {
     console.log("Error Sending Transaction - ", txDescriptionMessage);
