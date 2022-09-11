@@ -5,7 +5,7 @@ Uniswap Factory Contract - 0xC608F0718beA3563605aa652589767Cb35fcD05D
 
 Liquidity Value Contract - 0x2c24FD079475b4430bbCE2c6c5c8554c17e79d5b
 
-UniswapV2Router Contract - 
+UniswapV2Router Contract - 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92 
 
 > ## ERC20 Tokens
 
