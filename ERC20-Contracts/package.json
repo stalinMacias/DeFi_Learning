@@ -1,0 +1,17 @@
+{
+  "name": "ERC20_Contracts",
+  "version": "1.0.0",
+  "description": "ERC20 Contracts",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stalin Macias",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.3"
+  }
+}
