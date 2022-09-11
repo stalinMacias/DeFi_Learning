@@ -2,5 +2,5 @@
 const WETH = artifacts.require("WETH");
 
 module.exports = async function(deployer) {
-  await deployer.deploy(WETH)
+  await deployer.deploy(WETH, {overwrite: false})
 }
