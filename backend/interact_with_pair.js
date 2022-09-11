@@ -6,6 +6,7 @@ const OWNER_KEYS = process.env.OWNER_KEYS || ""
 // Token's ABIs
 const DAI = require('./contracts/DAI.json')
 const HEMI = require('./contracts/HEMI.json')
+const WETH = require('./contracts/WETH.json')
 
 async function init () {
   console.log("Running in the init() function - interact_with_pairs.js")
@@ -25,9 +26,19 @@ async function init () {
   const token2 = await common.getContract(web3js,HEMI);
   const token2Address = token2._address
 
+  const wethToken = await common.getContract(web3js,WETH);
+  const wethTokenAddress = wethToken._address
+
   const uniswapV2FactoryContract = await common.getContract(web3js,UniswapV2Factory)
   const pairTokensAddress = await uniswapV2FactoryContract.methods.getPair(token1Address,token2Address).call()
   //console.log("pairTokensAddress: ", pairTokensAddress);
+  
+  const dai_weth_pair_address = await uniswapV2FactoryContract.methods.getPair(token1Address,wethTokenAddress).call()
+  console.log("dai_weth_pair_address: ", dai_weth_pair_address);
+
+  const hemi_weth_pair_address = await uniswapV2FactoryContract.methods.getPair(token2Address,wethTokenAddress).call()
+  console.log("hemi_weth_pair_address: ", hemi_weth_pair_address);
+
   
   return { ownerAddress, web3js, liquidityValueCalculatorContract, token1Address, token2Address, pairTokensAddress }
 }

@@ -5,6 +5,7 @@ const OWNER_KEYS = process.env.OWNER_KEYS || ""
 // Token's ABIs
 const DAI = require('./contracts/DAI.json')
 const HEMI = require('./contracts/HEMI.json')
+const WETH = require('./contracts/WETH.json')
 
 
 async function init () {
@@ -23,12 +24,14 @@ async function init () {
 
   const token2 = await common.getContract(web3js,HEMI);
   const token2Address = token2._address
+
+  const wethToken = await common.getContract(web3js,WETH);
+  const wethTokenAddress = wethToken._address;
   
-  return { ownerAddress, web3js, uniswapV2FactoryContract, token1Address, token2Address }
-}
+  return { ownerAddress, web3js, uniswapV2FactoryContract, token1Address, token2Address, wethTokenAddress }}
 
 (async () => {
-  const { ownerAddress, web3js, uniswapV2FactoryContract, token1Address, token2Address } = await init()
+  const { ownerAddress, web3js, uniswapV2FactoryContract, token1Address, token2Address, wethTokenAddress } = await init()
   process.on( 'SIGINT', () => {
     console.log('Calling precess.exit()')
     process.exit( );
@@ -41,7 +44,10 @@ async function init () {
   //console.log("token2Address: ", token2Address);
 
   // Defining the transaction to create a new pair using the Uniswap V2 Factory contract
-  let createNewPair = uniswapV2FactoryContract.methods.createPair(token1Address,token2Address)
+  //let createNewPair = uniswapV2FactoryContract.methods.createPair(token1Address,token2Address) // Transaction for DAI/HEMI pair
+
+  // Transaction for pair DAI/WETH
+  let createNewPair = uniswapV2FactoryContract.methods.createPair(token1Address,wethTokenAddress)
 
   // Signing the transaction as the Owner
   //let signedTransaction  = await web3js.eth.accounts.signTransaction(options, OWNER_KEYS);
@@ -49,9 +55,24 @@ async function init () {
   //console.log("createNewPairSignedTransaction: ", createNewPairSignedTransaction);
 
   // When sending transactions to a public blockchain the transaction must be signed before actually sending it    <---> sendSignedTransaction(signedTrasaction.rawTransaction)
-  console.log("Sending the signed transaction to create a new pair of tokens using the Uniswap v2 Factory contract");
+  console.log("Sending the signed transaction to create a new pair of tokens using the Uniswap v2 Factory contract - DAI/WETH");
   await common.sendingSignedTransactions(createNewPairSignedTransaction, web3js, "Calling the createPair() method from the UniswapV2Factory contract")
   
+  
+  
+  // Transaction for pair HEMI/WETH
+  createNewPair = uniswapV2FactoryContract.methods.createPair(token2Address,wethTokenAddress)
+
+  // Signing the transaction as the Owner
+  //let signedTransaction  = await web3js.eth.accounts.signTransaction(options, OWNER_KEYS);
+  createNewPairSignedTransaction  = await web3js.eth.accounts.signTransaction(await common.generateTransactionsOptions(createNewPair, ownerAddress, web3js), OWNER_KEYS);
+  //console.log("createNewPairSignedTransaction: ", createNewPairSignedTransaction);
+
+  // When sending transactions to a public blockchain the transaction must be signed before actually sending it    <---> sendSignedTransaction(signedTrasaction.rawTransaction)
+  console.log("Sending the signed transaction to create a new pair of tokens using the Uniswap v2 Factory contract - HEMI/WETH");
+  await common.sendingSignedTransactions(createNewPairSignedTransaction, web3js, "Calling the createPair() method from the UniswapV2Factory contract")
+  
+
   // Sending an unsigned transaction - Works for Ganache but not for public blockchains
   //callerContract.methods.updateEthPrice().send({ from: clientAddress, gasLimit: 100000 })
 
