@@ -7,6 +7,10 @@ Liquidity Value Contract - 0x2c24FD079475b4430bbCE2c6c5c8554c17e79d5b
 
 UniswapV2Router Contract - 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92 
 
+> ## Uniswap's Utilities Contracts - Created by me using the uniswap interfaces
+Uniswap Utilities - 0xc77adb7F951F8262c04c272A04537b6C6f011caa
+
+
 > ## ERC20 Tokens
 
 WETH Contract = 0xf25812889146372f9614c499228620EB7017A569

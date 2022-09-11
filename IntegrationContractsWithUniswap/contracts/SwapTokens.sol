@@ -1,5 +1,6 @@
 pragma solidity ^0.6.6;
 import '@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol';
+import "./interfaces/IERC20.sol";
 
 contract SwapTokens {
   address private UNISWAP_V2_ROUTER;
@@ -8,7 +9,7 @@ contract SwapTokens {
 
   event Swap(address tokenIn, address tokenOut, uint amountIn, uint amountOut, address to, uint timestamp);
 
-  constructor() {
+  constructor() public {
     UNISWAP_V2_ROUTER = 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92; // Address in Ganache
     WETH = 0xf25812889146372f9614c499228620EB7017A569;              // Address in Ganache
     owner = msg.sender; 
@@ -53,7 +54,7 @@ contract SwapTokens {
     path[1] = WETH;
     path[2] = _tokenOut;
 
-    IUniswapRouter(UNISWAP_V2_ROUTER).swapExactTokensForTokens(_amountIn, _amountOutMin, path, _to, block.timestamp);
+    IUniswapV2Router02(UNISWAP_V2_ROUTER).swapExactTokensForTokens(_amountIn, _amountOutMin, path, _to, block.timestamp);
     emit Swap(_tokenIn, _tokenOut, _amountIn, _amountOutMin, _to, block.timestamp);
    }
 
