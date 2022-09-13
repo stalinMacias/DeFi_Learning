@@ -2,10 +2,13 @@
 const common = require('./utils/common.js')
 const UniswapV2Factory = require('./contracts/UniswapV2Factory.json')
 const LiquidityValueCalculator = require('./contracts/LiquidityValueCalculator.json')
+const UniswapUtilities = require('./contracts/UniswapUtilities.json')
+
 const OWNER_KEYS = process.env.OWNER_KEYS || ""
 // Token's ABIs
 const DAI = require('./contracts/DAI.json')
 const HEMI = require('./contracts/HEMI.json')
+const WETH = require('./contracts/WETH.json')
 
 async function init () {
   console.log("Running in the init() function - interact_with_pairs.js")
@@ -25,9 +28,34 @@ async function init () {
   const token2 = await common.getContract(web3js,HEMI);
   const token2Address = token2._address
 
+  const wethToken = await common.getContract(web3js,WETH);
+  const wethTokenAddress = wethToken._address
+
+          /* Getting the contract's address of the different pairs */
   const uniswapV2FactoryContract = await common.getContract(web3js,UniswapV2Factory)
-  const pairTokensAddress = await uniswapV2FactoryContract.methods.getPair(token1Address,token2Address).call()
+
+  const dai_hemi_pair_address = await uniswapV2FactoryContract.methods.getPair(token1Address,token2Address).call()
   //console.log("pairTokensAddress: ", pairTokensAddress);
+  
+  const dai_weth_pair_address = await uniswapV2FactoryContract.methods.getPair(token1Address,wethTokenAddress).call()
+  console.log("dai_weth_pair_address: ", dai_weth_pair_address);
+
+  const hemi_weth_pair_address = await uniswapV2FactoryContract.methods.getPair(token2Address,wethTokenAddress).call()
+  console.log("hemi_weth_pair_address: ", hemi_weth_pair_address);
+
+
+          /* Getting the reserves of the pools in the different pairs */
+  const uniswapUtilitiesContract = await common.getContract(web3js,UniswapUtilities)
+
+  let dai_weth_pool_reserves = await uniswapUtilitiesContract.methods.getReserves(dai_weth_pair_address).call();
+  console.log("Pool reserves from the DAI/WETH Pair: " , dai_weth_pool_reserves);
+
+  let hemi_weth_pool_reserves = await uniswapUtilitiesContract.methods.getReserves(hemi_weth_pair_address).call();
+  console.log("Pool reserves from the HEMI/WETH Pair: " , hemi_weth_pool_reserves);
+
+  let dai_hemi_pool_reserves = await uniswapUtilitiesContract.methods.getReserves(dai_hemi_pair_address).call();
+  console.log("Pool reserves from the DAI/HEMI Pair: " , dai_hemi_pool_reserves);
+
   
   return { ownerAddress, web3js, liquidityValueCalculatorContract, token1Address, token2Address, pairTokensAddress }
 }
