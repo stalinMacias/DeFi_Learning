@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 contract DAI is ERC20 {
 
     constructor() ERC20("DAI Stable Coin","DAI"){
-        _mint(msg.sender,100000);   // Will mint 100k tokens
+        _mint(msg.sender,100000 ether);   // Will mint 100k tokens
     }
 
     function faucet(address to, uint amount) external {
