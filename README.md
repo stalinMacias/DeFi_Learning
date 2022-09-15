@@ -3,9 +3,11 @@
 > ## Uniswap's Contract
 Uniswap Factory Contract - 0xC608F0718beA3563605aa652589767Cb35fcD05D
 
-Liquidity Value Contract - 0x2c24FD079475b4430bbCE2c6c5c8554c17e79d5b
+Liquidity Value Contract - 0x2c24FD079475b4430bbCE2c6c5c8554c17e79d5b   // The example from Uniswap documentation ...
 
 UniswapV2Router Contract - 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92 
+
+UniswapLiquidity Contract - <address>  // Add and Remove liquidity to/from token pools
 
 > ## Uniswap's Utilities Contracts - Created by me using the uniswap interfaces
 Uniswap Utilities - 0xc77adb7F951F8262c04c272A04537b6C6f011caa
@@ -19,12 +21,20 @@ DAI ERC20 Token Contract  - 0x1cb527Bb2e86272694019D200B7845A7c3ceA6Ca
 
 HEMI ERC20 Token Contract - 0xdfb0D23C696f7349B382fDac91dBEB4C4142e123
 
-> ## Pair Tokens
+> ## Pair Tokens - Token Pools
 DAI/HEMI PAIR CONTRACT 	  - 0x94472BE834E91EB40B0128b1a44c84d23Acea185
 
 DAI/WETH PAIR CONTRACT    - 0xc55Cb2D7239920F21d647108fa304707BedC5478
 
 HEMI/WETH PAIR CONTRACT   - 0x36bDb2Bf0572838df9eF6db8CD3aE0661E78a1A3
+
+> ## Accounts
+
+DAI_WHALE = "0x3782897C2aA7291b148d2C02BB54F7bC84982360"  // The account #2 from ganache is the DAI_WHALE
+
+WETH_WHALE = "0x29E3250e4bfc4939D7037BB7D670fAD932fEF9E5" // The account #4 from ganache is the WETH_WHALE
+
+HEMI_WHALE = "0x0679DaeF7C3Ea0761e55E1cf0704e0cb002cfCa8" // The account #3 from ganache is the HEMI_WHALE
 
 > ------------------
 > ------------------
