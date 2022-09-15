@@ -74,13 +74,12 @@ contract("UniswapLiquidity", (accounts) => {
     //const tokenA_Whale = await tokenA.balanceOf(TOKEN_A_WHALE);
 
     // transfer tokensA&B to CALLER from the TOKENS_WHALES to add liquidity to pool DAI/WETH
-    /*
     await tokenA.transfer(CALLER, TOKEN_A_AMOUNT, { from: TOKEN_A_WHALE });
     await tokenB.transfer(CALLER, TOKEN_B_AMOUNT, { from: TOKEN_B_WHALE });
 
     await tokenA.approve(contractUniswapLiquidity.address, TOKEN_A_AMOUNT, { from: CALLER });
     await tokenB.approve(contractUniswapLiquidity.address, TOKEN_B_AMOUNT, { from: CALLER });
-    */
+
 
 
     // transfer tokensA&C to CALLER from the TOKENS_WHALES to add liquidity to pool HEMI/WETH
@@ -90,26 +89,11 @@ contract("UniswapLiquidity", (accounts) => {
     await tokenA.approve(contractUniswapLiquidity.address, TOKEN_A_AMOUNT, { from: CALLER });
     await tokenC.approve(contractUniswapLiquidity.address, TOKEN_C_AMOUNT, { from: CALLER });
 
-    /*
-    // transfer tokenB to TOKEN_A_WHALE
-    await tokenB.transfer(TOKEN_A_WHALE, TOKEN_B_AMOUNT, { from: TOKEN_B_WHALE });
-    // approve this contract to spend the amount of tokens that will be provided as liquidity from TOKEN_A_WHALE
-    await tokenA.approve(contractUniswapLiquidity.address, TOKEN_A_AMOUNT, { from: TOKEN_A_WHALE });
-    await tokenB.approve(contractUniswapLiquidity.address, TOKEN_B_AMOUNT, { from: TOKEN_A_WHALE });
-
-    // transfer tokenA to TOKEN_B_WHALE
-    await tokenA.transfer(TOKEN_B_WHALE, TOKEN_A_AMOUNT, { from: TOKEN_A_WHALE });
-    // approve this contract to spend the amount of tokens that will be provided as liquidity from TOKEN_A_WHALE
-    await tokenA.approve(contractUniswapLiquidity.address, TOKEN_A_AMOUNT, { from: TOKEN_B_WHALE });
-    await tokenB.approve(contractUniswapLiquidity.address, TOKEN_B_AMOUNT, { from: TOKEN_B_WHALE });
-    */
-
   });
   
 
   it("add liquidity and remove liquidity", async () => {
 
-    /*
     console.log("=== add liquidity to pool DAI/WETH - CALLER ===");
     tx = await contractUniswapLiquidity.addLiquidity(
       tokenA.address,
@@ -124,7 +108,7 @@ contract("UniswapLiquidity", (accounts) => {
       //console.log("log.args :", log.args);
       console.log(`${log.args.message} ${web3.utils.fromWei(log.args.value, "ether")}`);
     }
-    */
+
 
     console.log("=== add liquidity to pool HEMI/WETH - CALLER ===");
     tx = await contractUniswapLiquidity.addLiquidity(
