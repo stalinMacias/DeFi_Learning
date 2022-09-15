@@ -55,9 +55,13 @@ contract UniswapLiquidity {
 
     uint totalTokenA = IERC20(_tokenA).balanceOf(address(this));
     emit Log("Total tokenA held in this contract: ", totalTokenA);
-
     uint totalTokenAInPool = IERC20(_tokenA).balanceOf(pair);
     emit Log("Total tokenA held in the pool contract: ", totalTokenAInPool);
+
+    uint totalTokenB = IERC20(_tokenB).balanceOf(address(this));
+    emit Log("Total tokenB held in this contract: ", totalTokenB);
+    uint totalTokenBInPool = IERC20(_tokenB).balanceOf(pair);
+    emit Log("Total tokenB held in the pool contract: ", totalTokenBInPool);
 
   }
 
@@ -65,7 +69,7 @@ contract UniswapLiquidity {
     uint liquidity = liquidityOwnership[msg.sender]; // Provider's total liquidity
     require(liquidity > 0, "Error, this address have not provided any liquidity");
 
-    address pair = IUniswapV2Factory.getPair(_tokenA, _tokenB);
+    address pair = IUniswapV2Factory(UNISWAP_FACTORY).getPair(_tokenA, _tokenB);
     uint contractOriginalLiquidity = IERC20(pair).balanceOf(address(this));
 
     IERC20(pair).approve(UNISWAP_ROUTER, liquidity);
@@ -83,6 +87,13 @@ contract UniswapLiquidity {
 
     uint totalTokenA = IERC20(_tokenA).balanceOf(address(this));
     emit Log("Total tokenA held in this contract: ", totalTokenA);
+    uint totalTokenAInPool = IERC20(_tokenA).balanceOf(pair);
+    emit Log("Total tokenA held in the pool contract: ", totalTokenAInPool);
+
+    uint totalTokenB = IERC20(_tokenB).balanceOf(address(this));
+    emit Log("Total tokenB held in this contract: ", totalTokenB);
+    uint totalTokenBInPool = IERC20(_tokenB).balanceOf(pair);
+    emit Log("Total tokenB held in the pool contract: ", totalTokenBInPool);
 
   }
   
