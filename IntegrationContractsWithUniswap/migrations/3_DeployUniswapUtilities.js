@@ -2,5 +2,5 @@
 const UniswapUtilities = artifacts.require("UniswapUtilities");
 
 module.exports = async function (deployer) {
-  await deployer.deploy(UniswapUtilities)
+  await deployer.deploy(UniswapUtilities, {overwrite: false})
 }
