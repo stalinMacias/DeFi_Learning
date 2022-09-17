@@ -9,6 +9,8 @@ UniswapV2Router Contract - 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92
 
 UniswapLiquidity Contract - <address>  // Add and Remove liquidity to/from token pools
 
+UniswapOptimalContract - <address>  // Add all the tokensA by calculating and swapping the required tokensB and then adding the liquidity to the liquidity pools and make sure the pool ratio is preserved
+
 > ## Uniswap's Utilities Contracts - Created by me using the uniswap interfaces
 Uniswap Utilities - 0xc77adb7F951F8262c04c272A04537b6C6f011caa
 

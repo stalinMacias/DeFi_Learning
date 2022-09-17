@@ -6,9 +6,9 @@ import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
 
 
 contract UniswapLiquidity {
-  address private constant UNISWAP_FACTORY = 0xC608F0718beA3563605aa652589767Cb35fcD05D;
-  address private constant UNISWAP_ROUTER = 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92;
-  address private constant WETH = 0xf25812889146372f9614c499228620EB7017A569;
+  address private constant UNISWAP_FACTORY = 0xC608F0718beA3563605aa652589767Cb35fcD05D;  //Ganache
+  address private constant UNISWAP_ROUTER = 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92;   //Ganache
+  address private constant WETH = 0xf25812889146372f9614c499228620EB7017A569;             //Ganache
 
   mapping(address => uint) liquidityOwnership;
 
