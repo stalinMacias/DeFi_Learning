@@ -96,5 +96,32 @@ contract UniswapLiquidity {
     emit Log("Total tokenB held in the pool contract: ", totalTokenBInPool);
 
   }
+
+  /**
+    @dev transferLiquidityTokensTo() function transfers all the liquidity tokens that a providers holds on this contract to a given address specified in the parameters
+  */
+  function transferLiquidityTokensTo(address _receiver, address _tokenA, address _tokenB) external {
+    require(liquidityOwnership[msg.sender] > 0, "The caller doesn't holds liquidity tokens in this contract");
+  
+    uint liquidity = liquidityOwnership[msg.sender]; // Provider's total liquidity
+    address pair = IUniswapV2Factory(UNISWAP_FACTORY).getPair(_tokenA, _tokenB);
+
+    uint contractOriginalLiquidity = IERC20(pair).balanceOf(address(this));
+
+    // Prevent re-entrancy attacks
+    liquidityOwnership[msg.sender] = 0;
+
+    // Send the liquidity tokens that the providers holds on this contract
+    IERC20(pair).transfer(_receiver, liquidity);
+
+    uint contractRemainingLiquidity = IERC20(pair).balanceOf(address(this));
+
+    emit Log("Original Liquidity in this contract: ", contractOriginalLiquidity);
+    emit Log("Remaining Liquidity in this contract: ", contractRemainingLiquidity);
+
+    uint newAddressLPs = IERC20(pair).balanceOf(_receiver);
+    emit Log("Remaining Liquidity in this contract: ", newAddressLPs);
+
+  }
   
 }
