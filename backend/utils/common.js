@@ -92,14 +92,14 @@ async function sendingSignedTransactions(signedTransaction, web3js, txDescriptio
 
 /**
  * @dev - This function is responsible to increase the allowance for the UniswapLiquidity contract BEFORE calling the addLiquidity() function from the uniswap contracts!
- * @param {web3Object}                    - The web3 object
+ * @param {web3Object} web3js             - The web3 object
  * @param {contractObject} tokenContract  - The object's contract of the ERC20 token that'll be called to increase the allowance
  * @param {int} allowanceAmount           - The amount of tokens that will be granted as allowance to the spender
  * @param {address} spenderAddress        - The spender's address (The address that'll receive the allowance)
  * @param {address} signerAddress         - The address of the account that is signing the transaction - The owner of the tokens
  * @param {PRIVATE_KEYS} SIGNER           - The PRIVATE_KEYS of the signer - The owner of the tokens
  */
- async function increaseAllowance(web3js,tokenContract,allowanceAmount,spenderAddress,signerAddress,SIGNER) {
+async function increaseAllowance(web3js,tokenContract,allowanceAmount,spenderAddress,signerAddress,SIGNER) {
   let allowance = web3js.utils.toWei(allowanceAmount.toString(),'ether')
   // Defining the transaction to grant the required allowance to the UniswapLiquidity contract to spend tokens on behalf of the provider
   let grantAllowance = tokenContract.methods.increaseAllowance(spenderAddress,allowance)
@@ -112,6 +112,29 @@ async function sendingSignedTransactions(signedTransaction, web3js, txDescriptio
 
 }
 
+
+/**
+ * @dev - This function enables to transfer liquidity tokens from a contract that holds LP tokens from Providers
+ * @param {web3Object} web3js                   - The web3 object
+ * @param {contractObject} liquidityContract    - The Liquidity contract where the LP tokens are
+ * @param {address} receiverAddress             - The address that will receive the LP tokens
+ * @param {address} token_A_Address             - The address of the TokenA of the pair
+ * @param {adddress} token_B_Address            - The address of the TokenB of the pair
+ * @param {address} signerAddress               - The address of the account that is signing the transaction - The owner of the tokens
+ * @param {PRIVATE_KEYS} SIGNER                 - The PRIVATE_KEYS of the signer - The owner of the tokens
+ */
+async function transferLiquidityTokens(web3js,liquidityContract,receiverAddress,token_A_Address,token_B_Address,signerAddress,SIGNER) {
+  // Defining the transaction to transfer the liquidity tokens that the sender holds on the UniswapLiquidity contract from the pair of tokens A/B to a given address
+  let transferLiquidityTokens = liquidityContract.methods.transferLiquidityTokensTo(receiverAddress,token_A_Address,token_B_Address)
+
+  // Signing the transaction
+  let transferLiquidityTokensSignedTransaction  = await web3js.eth.accounts.signTransaction(await generateTransactionsOptions(transferLiquidityTokens, signerAddress, web3js), SIGNER);
+  
+  // Sending a signed transaction  <---> sendSignedTransaction(signedTrasaction.rawTransaction)
+  await sendingSignedTransactions(transferLiquidityTokensSignedTransaction, web3js, "Transfering the liquidity tokens that the daiWhale holds in the UniswapLiquidity contract from the pair DAI/WETH")
+
+}
+
 module.exports = {
   initializeConnection,
   getWeb3Object,
@@ -119,4 +142,5 @@ module.exports = {
   generateTransactionsOptions,
   sendingSignedTransactions,
   increaseAllowance,
+  transferLiquidityTokens,
 };
