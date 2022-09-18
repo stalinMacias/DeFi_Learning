@@ -11692,7 +11692,7 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-09-17T01:29:45.711Z",
+  "updatedAt": "2022-09-18T02:14:11.587Z",
   "networkType": "ethereum",
   "devdoc": {
     "details": "These functions only requires how many tokens from one of the two tokens in a pool will be added as liquidity internally, the functions calculates how many tokens of the other token will be required to perform a swap using all the tokens that the user wants to add as liquidity Once the functions have estimated the required tokens, a swap is performed to get the exact amount of the token B so all the tokens A can be added as liquidity After the swap is perfomed, the token A & token B are sent as liquidity to the pool And, voahala, no tokens are left, all the token A was added as liquidity and the reserve ratio in the pool is remain",

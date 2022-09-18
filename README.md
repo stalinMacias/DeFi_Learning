@@ -3,15 +3,15 @@
 > ## Uniswap's Contract
 Uniswap Factory Contract - 0xC608F0718beA3563605aa652589767Cb35fcD05D
 
-Liquidity Value Contract - 0x2c24FD079475b4430bbCE2c6c5c8554c17e79d5b   // The example from Uniswap documentation ...
-
 UniswapV2Router Contract - 0x19326b7F6d45e40fDb04C2Cd7c47147c6FA18D92 
 
-UniswapLiquidity Contract - 0xE39BC97a6a2fe094AC4673f26EbE0a1Ff6E24d79  // Add and Remove liquidity to/from token pools
+Liquidity Value Contract - 0x2c24FD079475b4430bbCE2c6c5c8554c17e79d5b   // The example from Uniswap documentation ...
+
+UniswapLiquidity Contract - 0x4A25ed7d54F69eDa055CcA726E6Ca6B4a7602d88  // Add and Remove liquidity to/from token pools
 
 UniswapOptimalContract - 0x2620836AD6c7939f005231BA8EC7Ca1c9a16fc3b  // Add all the tokensA by calculating and swapping the required tokensB and then adding the liquidity to the liquidity pools and make sure the pool ratio is preserved
 
-> ## Uniswap's Utilities Contracts - Created by me using the uniswap interfaces
+> ## Uniswap's Utilities Contracts - Created by me to ease the use of the uniswap interfaces
 Uniswap Utilities - 0xc77adb7F951F8262c04c272A04537b6C6f011caa
 
 
