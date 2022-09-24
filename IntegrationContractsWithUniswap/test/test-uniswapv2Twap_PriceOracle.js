@@ -106,7 +106,8 @@ contract("UniswapV2Twap_PriceOracle", (accounts) => {
         from: CALLER,
       }
     );
-    console.log("Tx result: ", tx.logs.log.args);
+    console.log("Tx result: ", tx);
+    //console.log("Tx result: ", tx.logs.log.args);
     /*
     for (const log of tx.logs) {
       //console.log("log.args :", log.args);
@@ -142,7 +143,8 @@ contract("UniswapV2Twap_PriceOracle", (accounts) => {
         from: CALLER,
       }
     );
-    console.log("Tx result: ", tx.logs.log.args);
+    //console.log("Tx result: ", tx.logs.log.args);
+    console.log("Tx result: ", tx);
   });
   
 });
