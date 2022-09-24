@@ -11,7 +11,7 @@ async function initializeConnection(PRIVATE_KEYS) {
     privateKeys: PRIVATE_KEYS.split(','),
     //providerOrUrl: `https://goerli.infura.io/v3/${INFURA_API_KEY}`
     //providerOrUrl: `wss://goerli.infura.io/ws/v3/${INFURA_API_KEY}`   // Goerli through ws (Web Sockets)
-    providerOrUrl: `ws://172.30.96.1:7545`                             // Ganache through ws (Web Sockets)
+    providerOrUrl: `ws://192.168.176.1:7545`                             // Ganache through ws (Web Sockets)
   })
 
   console.log("connection's address: " ,connection.getAddress())
@@ -23,7 +23,7 @@ async function initializeConnection(PRIVATE_KEYS) {
 
 async function getWeb3Object() {
   //const web3 = new Web3(new Web3.providers.WebsocketProvider(`wss://goerli.infura.io/ws/v3/${INFURA_API_KEY}`))   // Goerli
-  const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://172.30.96.1:7545'))                             // Ganache
+  const web3 = new Web3(new Web3.providers.WebsocketProvider('ws://192.168.176.1:7545'))                             // Ganache
   //console.log("web3 object: ", web3)
   return {
     web3js: web3
