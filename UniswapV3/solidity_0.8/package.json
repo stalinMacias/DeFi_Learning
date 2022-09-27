@@ -1,0 +1,11 @@
+{
+  "name": "contracts_uniswap_v3",
+  "version": "1.0.0",
+  "description": "Contracts to interact with Uniswap V3 Protocol",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stalin Macias",
+  "license": "ISC"
+}

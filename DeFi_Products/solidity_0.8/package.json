@@ -1,0 +1,11 @@
+{
+  "name": "defi_products",
+  "version": "1.0.0",
+  "description": "Any DeFi product - Contracts created using solidity v0.8",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stalin Macias",
+  "license": "ISC"
+}
