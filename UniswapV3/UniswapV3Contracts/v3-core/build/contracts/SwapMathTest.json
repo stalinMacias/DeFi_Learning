@@ -1,0 +1,2065 @@
+{
+  "contractName": "SwapMathTest",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint160",
+          "name": "sqrtP",
+          "type": "uint160"
+        },
+        {
+          "internalType": "uint160",
+          "name": "sqrtPTarget",
+          "type": "uint160"
+        },
+        {
+          "internalType": "uint128",
+          "name": "liquidity",
+          "type": "uint128"
+        },
+        {
+          "internalType": "int256",
+          "name": "amountRemaining",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint24",
+          "name": "feePips",
+          "type": "uint24"
+        }
+      ],
+      "name": "computeSwapStep",
+      "outputs": [
+        {
+          "internalType": "uint160",
+          "name": "sqrtQ",
+          "type": "uint160"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountIn",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amountOut",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "feeAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint160",
+          "name": "sqrtP",
+          "type": "uint160"
+        },
+        {
+          "internalType": "uint160",
+          "name": "sqrtPTarget",
+          "type": "uint160"
+        },
+        {
+          "internalType": "uint128",
+          "name": "liquidity",
+          "type": "uint128"
+        },
+        {
+          "internalType": "int256",
+          "name": "amountRemaining",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint24",
+          "name": "feePips",
+          "type": "uint24"
+        }
+      ],
+      "name": "getGasCostOfComputeSwapStep",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint160\",\"name\":\"sqrtP\",\"type\":\"uint160\"},{\"internalType\":\"uint160\",\"name\":\"sqrtPTarget\",\"type\":\"uint160\"},{\"internalType\":\"uint128\",\"name\":\"liquidity\",\"type\":\"uint128\"},{\"internalType\":\"int256\",\"name\":\"amountRemaining\",\"type\":\"int256\"},{\"internalType\":\"uint24\",\"name\":\"feePips\",\"type\":\"uint24\"}],\"name\":\"computeSwapStep\",\"outputs\":[{\"internalType\":\"uint160\",\"name\":\"sqrtQ\",\"type\":\"uint160\"},{\"internalType\":\"uint256\",\"name\":\"amountIn\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"amountOut\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"feeAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint160\",\"name\":\"sqrtP\",\"type\":\"uint160\"},{\"internalType\":\"uint160\",\"name\":\"sqrtPTarget\",\"type\":\"uint160\"},{\"internalType\":\"uint128\",\"name\":\"liquidity\",\"type\":\"uint128\"},{\"internalType\":\"int256\",\"name\":\"amountRemaining\",\"type\":\"int256\"},{\"internalType\":\"uint24\",\"name\":\"feePips\",\"type\":\"uint24\"}],\"name\":\"getGasCostOfComputeSwapStep\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/test/SwapMathTest.sol\":\"SwapMathTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/libraries/FixedPoint96.sol\":{\"keccak256\":\"0x0ba8a9b95a956a4050749c0158e928398c447c91469682ca8a7cc7e77a7fe032\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://186d3b528866065a5856f96d2aeec698efa99f8da913e9adf34f8cc296cc993d\",\"dweb:/ipfs/QmUAiMvtAQp8c9dy57bqJYzG7hkb1uChiPaQmt264skoqP\"]},\"project:/contracts/libraries/FullMath.sol\":{\"keccak256\":\"0x50e87f7a3197525d1c6f7e04290060e848677c8a4e86c554bc6ace4a4d0d476d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3874093a6b37d8e68f9475a91f8eb0a1c808cb6153c84cfe6c37909505a4d24e\",\"dweb:/ipfs/QmUqGpQqvSHX4SwUvcBCs9g4ZhR9JPhgD3615oUigAhtjj\"]},\"project:/contracts/libraries/LowGasSafeMath.sol\":{\"keccak256\":\"0x86715eb960f18e01ac94e3bba4614ed51a887fa3c5bd1c43bf80aa98e019cf2d\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://bfc1d5d58e59015086b0e65a6c3a2ddad312e2350480510f6c0c8167f3d71a37\",\"dweb:/ipfs/QmQndULYjFsHKHjMAKLMfc12vWbVB5FawtioHtvwcWRJZp\"]},\"project:/contracts/libraries/SafeCast.sol\":{\"keccak256\":\"0x4c12bf820c0b011f5490a209960ca34dd8af34660ef9e01de0438393d15e3fd8\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://fed11489e218e55d087d42b4f350a30e10cd2aedec8f432bd3cc712f648d5869\",\"dweb:/ipfs/QmWfRnRxyXwHUDcTQPazxYYk5jxErGeQqdvnYtyg5nBPbU\"]},\"project:/contracts/libraries/SqrtPriceMath.sol\":{\"keccak256\":\"0x4f69701d331d364b69a1cda77cd7b983a0079d36ae0e06b0bb1d64ae56c3705e\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://f9ed4f172da650484c97d31cce084e905e69c3f3b072141cb15363f4ed0cd03c\",\"dweb:/ipfs/QmPNDM667PxzbbR8YDbtibFaPMGrcbK71GKpFPkGgDEYvb\"]},\"project:/contracts/libraries/SwapMath.sol\":{\"keccak256\":\"0xcd310be830646d0d55bef86683847577f742704d227471ad7b4cab3df9c47cf7\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://e6029f7cbb62563f488ee9c4510fee69b5408b64119065d912c1bd682baeef84\",\"dweb:/ipfs/Qmed5zZvcEbqmDmkyGV2huNzrK3mk8KrF9UQohKWLTcc3n\"]},\"project:/contracts/libraries/UnsafeMath.sol\":{\"keccak256\":\"0x5f36d7d16348d8c37fe64fda932018d6e5e8acecd054f0f97d32db62d20c6c88\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://4bd4e817ea3d2c26bb2be7e58db3eaa403119562c18d4c09cc92fb31aa231496\",\"dweb:/ipfs/QmbpjgL8Hf1mhmUyf9hpuPk4noGAggCdTqaRBFKqNF3AQw\"]},\"project:/contracts/test/SwapMathTest.sol\":{\"keccak256\":\"0xc7af132c098c2e8c5b7be753e1c8803d46d9417f25501a1d82d8b5a866acf794\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://d95d1778e97d9f891fdb45c3d755fa1da727ef20d1a4ee8a32e56210b81c6377\",\"dweb:/ipfs/QmQAjbpsPvYZ1d8RBF3Ndu26nAwXs4DL8jyrXPGsU9FCyF\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610c20806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063100d3f741461003b578063d28c51b714610113575b600080fd5b6100d2600480360360a081101561005157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356fffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803562ffffff1690602001909291905050506101c0565b604051808573ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390f35b6101aa600480360360a081101561012957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356fffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803562ffffff1690602001909291905050506101e7565b6040518082815260200191505060405180910390f35b6000806000806101d3898989898961020d565b935093509350935095509550955095915050565b6000805a90506101fa878787878761020d565b505050505a810391505095945050505050565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff168a73ffffffffffffffffffffffffffffffffffffffff1610159050600080881215905080156102bc57600061026f8989620f42400362ffffff16620f4240610469565b905082610288576102838c8c8c6001610543565b610296565b6102958b8d8c600161061d565b5b95508581106102a7578a96506102b6565b6102b38c8b8386610753565b96505b50610308565b816102d3576102ce8b8b8b600061061d565b6102e1565b6102e08a8c8b6000610543565b5b93508388600003106102f557899550610307565b6103048b8a8a600003856107c5565b95505b5b60008673ffffffffffffffffffffffffffffffffffffffff168b73ffffffffffffffffffffffffffffffffffffffff16149050821561038f5780801561034b5750815b6103615761035c878d8c600161061d565b610363565b855b9550808015610370575081155b61038657610381878d8c6000610543565b610388565b845b94506103d9565b8080156103995750815b6103af576103aa8c888c6001610543565b6103b1565b855b95508080156103be575081155b6103d4576103cf8c888c600061061d565b6103d6565b845b94505b811580156103e957508860000385115b156103f5578860000394505b81801561042e57508a73ffffffffffffffffffffffffffffffffffffffff168773ffffffffffffffffffffffffffffffffffffffff1614155b1561043d57858903935061045a565b610457868962ffffff168a620f42400362ffffff16610837565b93505b50505095509550955095915050565b6000806000801985870985870292508281108382030391505060008114156104a4576000841161049857600080fd5b8382049250505061053c565b8084116104b057600080fd5b600084868809905082811182039150808303925060008586600003169050808604955080840493506001818260000304019050808302841793506000600287600302189050808702600203810290508087026002038102905080870260020381029050808702600203810290508087026002038102905080870260020381029050808502955050505050505b9392505050565b60008373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff16111561058457838580955081965050505b816105d0576105cb836fffffffffffffffffffffffffffffffff1686860373ffffffffffffffffffffffffffffffffffffffff166c01000000000000000000000000610469565b610613565b610612836fffffffffffffffffffffffffffffffff1686860373ffffffffffffffffffffffffffffffffffffffff166c01000000000000000000000000610837565b5b9050949350505050565b60008373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff16111561065e57838580955081965050505b6000606060ff16846fffffffffffffffffffffffffffffffff16901b9050600086860373ffffffffffffffffffffffffffffffffffffffff16905060008773ffffffffffffffffffffffffffffffffffffffff16116106bc57600080fd5b83610706578673ffffffffffffffffffffffffffffffffffffffff166106f983838973ffffffffffffffffffffffffffffffffffffffff16610469565b8161070057fe5b04610747565b61074661072a83838973ffffffffffffffffffffffffffffffffffffffff16610837565b8873ffffffffffffffffffffffffffffffffffffffff16610895565b5b92505050949350505050565b6000808573ffffffffffffffffffffffffffffffffffffffff161161077757600080fd5b6000846fffffffffffffffffffffffffffffffff161161079657600080fd5b816107ad576107a885858560016108a8565b6107bb565b6107ba8585856001610a1a565b5b9050949350505050565b6000808573ffffffffffffffffffffffffffffffffffffffff16116107e957600080fd5b6000846fffffffffffffffffffffffffffffffff161161080857600080fd5b8161081f5761081a8585856000610a1a565b61082d565b61082c85858560006108a8565b5b9050949350505050565b6000610844848484610469565b90506000828061085057fe5b848609111561088e577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff811061088557600080fd5b80806001019150505b9392505050565b6000808284061182840401905092915050565b6000811561095e57600073ffffffffffffffffffffffffffffffffffffffff80168411156108ff576108fa846c01000000000000000000000000876fffffffffffffffffffffffffffffffff16610469565b610923565b846fffffffffffffffffffffffffffffffff16606060ff1685901b8161092157fe5b045b9050610956610951828873ffffffffffffffffffffffffffffffffffffffff16610ba490919063ffffffff16565b610bbe565b915050610a12565b600073ffffffffffffffffffffffffffffffffffffffff80168411156109ad576109a8846c01000000000000000000000000876fffffffffffffffffffffffffffffffff16610837565b6109d1565b6109d0606060ff1685901b866fffffffffffffffffffffffffffffffff16610895565b5b9050808673ffffffffffffffffffffffffffffffffffffffff16116109f557600080fd5b808673ffffffffffffffffffffffffffffffffffffffff16039150505b949350505050565b600080831415610a2c57849050610b9c565b6000606060ff16856fffffffffffffffffffffffffffffffff16901b90508215610b135760008673ffffffffffffffffffffffffffffffffffffffff16858873ffffffffffffffffffffffffffffffffffffffff16870292508281610a8d57fe5b041415610acf5760008183019050828110610acd57610ac3838973ffffffffffffffffffffffffffffffffffffffff1683610837565b9350505050610b9c565b505b610b0a82610b05878a73ffffffffffffffffffffffffffffffffffffffff168681610af657fe5b04610ba490919063ffffffff16565b610895565b92505050610b9c565b60008673ffffffffffffffffffffffffffffffffffffffff16858873ffffffffffffffffffffffffffffffffffffffff16870292508281610b5057fe5b04148015610b5d57508082115b610b6657600080fd5b60008183039050610b96610b91848a73ffffffffffffffffffffffffffffffffffffffff1684610837565b610bbe565b93505050505b949350505050565b6000828284019150811015610bb857600080fd5b92915050565b6000818291508173ffffffffffffffffffffffffffffffffffffffff1614610be557600080fd5b91905056fea2646970667358221220ec05ce2817b4068bb0de00c52462161ca780c5c7d6c1e5887b8d462e7c5795f264736f6c63430007060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063100d3f741461003b578063d28c51b714610113575b600080fd5b6100d2600480360360a081101561005157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356fffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803562ffffff1690602001909291905050506101c0565b604051808573ffffffffffffffffffffffffffffffffffffffff16815260200184815260200183815260200182815260200194505050505060405180910390f35b6101aa600480360360a081101561012957600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080356fffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803562ffffff1690602001909291905050506101e7565b6040518082815260200191505060405180910390f35b6000806000806101d3898989898961020d565b935093509350935095509550955095915050565b6000805a90506101fa878787878761020d565b505050505a810391505095945050505050565b60008060008060008873ffffffffffffffffffffffffffffffffffffffff168a73ffffffffffffffffffffffffffffffffffffffff1610159050600080881215905080156102bc57600061026f8989620f42400362ffffff16620f4240610469565b905082610288576102838c8c8c6001610543565b610296565b6102958b8d8c600161061d565b5b95508581106102a7578a96506102b6565b6102b38c8b8386610753565b96505b50610308565b816102d3576102ce8b8b8b600061061d565b6102e1565b6102e08a8c8b6000610543565b5b93508388600003106102f557899550610307565b6103048b8a8a600003856107c5565b95505b5b60008673ffffffffffffffffffffffffffffffffffffffff168b73ffffffffffffffffffffffffffffffffffffffff16149050821561038f5780801561034b5750815b6103615761035c878d8c600161061d565b610363565b855b9550808015610370575081155b61038657610381878d8c6000610543565b610388565b845b94506103d9565b8080156103995750815b6103af576103aa8c888c6001610543565b6103b1565b855b95508080156103be575081155b6103d4576103cf8c888c600061061d565b6103d6565b845b94505b811580156103e957508860000385115b156103f5578860000394505b81801561042e57508a73ffffffffffffffffffffffffffffffffffffffff168773ffffffffffffffffffffffffffffffffffffffff1614155b1561043d57858903935061045a565b610457868962ffffff168a620f42400362ffffff16610837565b93505b50505095509550955095915050565b6000806000801985870985870292508281108382030391505060008114156104a4576000841161049857600080fd5b8382049250505061053c565b8084116104b057600080fd5b600084868809905082811182039150808303925060008586600003169050808604955080840493506001818260000304019050808302841793506000600287600302189050808702600203810290508087026002038102905080870260020381029050808702600203810290508087026002038102905080870260020381029050808502955050505050505b9392505050565b60008373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff16111561058457838580955081965050505b816105d0576105cb836fffffffffffffffffffffffffffffffff1686860373ffffffffffffffffffffffffffffffffffffffff166c01000000000000000000000000610469565b610613565b610612836fffffffffffffffffffffffffffffffff1686860373ffffffffffffffffffffffffffffffffffffffff166c01000000000000000000000000610837565b5b9050949350505050565b60008373ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff16111561065e57838580955081965050505b6000606060ff16846fffffffffffffffffffffffffffffffff16901b9050600086860373ffffffffffffffffffffffffffffffffffffffff16905060008773ffffffffffffffffffffffffffffffffffffffff16116106bc57600080fd5b83610706578673ffffffffffffffffffffffffffffffffffffffff166106f983838973ffffffffffffffffffffffffffffffffffffffff16610469565b8161070057fe5b04610747565b61074661072a83838973ffffffffffffffffffffffffffffffffffffffff16610837565b8873ffffffffffffffffffffffffffffffffffffffff16610895565b5b92505050949350505050565b6000808573ffffffffffffffffffffffffffffffffffffffff161161077757600080fd5b6000846fffffffffffffffffffffffffffffffff161161079657600080fd5b816107ad576107a885858560016108a8565b6107bb565b6107ba8585856001610a1a565b5b9050949350505050565b6000808573ffffffffffffffffffffffffffffffffffffffff16116107e957600080fd5b6000846fffffffffffffffffffffffffffffffff161161080857600080fd5b8161081f5761081a8585856000610a1a565b61082d565b61082c85858560006108a8565b5b9050949350505050565b6000610844848484610469565b90506000828061085057fe5b848609111561088e577fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff811061088557600080fd5b80806001019150505b9392505050565b6000808284061182840401905092915050565b6000811561095e57600073ffffffffffffffffffffffffffffffffffffffff80168411156108ff576108fa846c01000000000000000000000000876fffffffffffffffffffffffffffffffff16610469565b610923565b846fffffffffffffffffffffffffffffffff16606060ff1685901b8161092157fe5b045b9050610956610951828873ffffffffffffffffffffffffffffffffffffffff16610ba490919063ffffffff16565b610bbe565b915050610a12565b600073ffffffffffffffffffffffffffffffffffffffff80168411156109ad576109a8846c01000000000000000000000000876fffffffffffffffffffffffffffffffff16610837565b6109d1565b6109d0606060ff1685901b866fffffffffffffffffffffffffffffffff16610895565b5b9050808673ffffffffffffffffffffffffffffffffffffffff16116109f557600080fd5b808673ffffffffffffffffffffffffffffffffffffffff16039150505b949350505050565b600080831415610a2c57849050610b9c565b6000606060ff16856fffffffffffffffffffffffffffffffff16901b90508215610b135760008673ffffffffffffffffffffffffffffffffffffffff16858873ffffffffffffffffffffffffffffffffffffffff16870292508281610a8d57fe5b041415610acf5760008183019050828110610acd57610ac3838973ffffffffffffffffffffffffffffffffffffffff1683610837565b9350505050610b9c565b505b610b0a82610b05878a73ffffffffffffffffffffffffffffffffffffffff168681610af657fe5b04610ba490919063ffffffff16565b610895565b92505050610b9c565b60008673ffffffffffffffffffffffffffffffffffffffff16858873ffffffffffffffffffffffffffffffffffffffff16870292508281610b5057fe5b04148015610b5d57508082115b610b6657600080fd5b60008183039050610b96610b91848a73ffffffffffffffffffffffffffffffffffffffff1684610837565b610bbe565b93505050505b949350505050565b6000828284019150811015610bb857600080fd5b92915050565b6000818291508173ffffffffffffffffffffffffffffffffffffffff1614610be557600080fd5b91905056fea2646970667358221220ec05ce2817b4068bb0de00c52462161ca780c5c7d6c1e5887b8d462e7c5795f264736f6c63430007060033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "101:872:47:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "101:872:47:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;129:451;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;586:385;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;129:451;355:13;382:16;412:17;443;492:81;517:5;524:11;537:9;548:15;565:7;492:24;:81::i;:::-;485:88;;;;;;;;129:451;;;;;;;;;;:::o;586:385::-;787:7;806:17;826:9;806:29;;845:81;870:5;877:11;890:9;901:15;918:7;845:24;:81::i;:::-;;;;;955:9;943;:21;936:28;;;586:385;;;;;;;:::o;1391:3239:27:-;1638:24;1676:16;1706:17;1737;1779:15;1820:18;1797:41;;:19;:41;;;;1779:59;;1848:12;1882:1;1863:15;:20;;1848:35;;1898:7;1894:1354;;;1921:30;1954:61;1978:15;2002:7;1996:3;:13;1954:61;;2011:3;1954:15;:61::i;:::-;1921:94;;2040:10;:222;;2175:87;2205:19;2226:18;2246:9;2257:4;2175:29;:87::i;:::-;2040:222;;;2069:87;2099:18;2119:19;2140:9;2151:4;2069:29;:87::i;:::-;2040:222;2029:233;;2306:8;2280:22;:34;2276:336;;2335:18;2316:37;;2276:336;;;2407:205;2468:19;2509:9;2540:22;2584:10;2407:39;:205::i;:::-;2388:224;;2276:336;1894:1354;;;;2655:10;:224;;2791:88;2821:19;2842:18;2862:9;2873:5;2791:29;:88::i;:::-;2655:224;;;2684:88;2714:18;2734:19;2755:9;2766:5;2684:29;:88::i;:::-;2655:224;2643:236;;2926:9;2906:15;2905:16;;2897:38;2893:344;;2956:18;2937:37;;2893:344;;;3028:209;3090:19;3131:9;3171:15;3170:16;;3209:10;3028:40;:209::i;:::-;3009:228;;2893:344;1894:1354;3258:8;3291:16;3269:38;;:18;:38;;;3258:49;;3362:10;3358:732;;;3399:3;:14;;;;;3406:7;3399:14;:145;;3459:85;3489:16;3507:19;3528:9;3539:4;3459:29;:85::i;:::-;3399:145;;;3432:8;3399:145;3388:156;;3570:3;:15;;;;;3578:7;3577:8;3570:15;:148;;3632:86;3662:16;3680:19;3701:9;3712:5;3632:29;:86::i;:::-;3570:148;;;3604:9;3570:148;3558:160;;3358:732;;;3760:3;:14;;;;;3767:7;3760:14;:145;;3820:85;3850:19;3871:16;3889:9;3900:4;3820:29;:85::i;:::-;3760:145;;;3793:8;3760:145;3749:156;;3931:3;:15;;;;;3939:7;3938:8;3931:15;:148;;3993:86;4023:19;4044:16;4062:9;4073:5;3993:29;:86::i;:::-;3931:148;;;3965:9;3931:148;3919:160;;3358:732;4180:7;4179:8;:49;;;;;4212:15;4211:16;;4191:9;:37;4179:49;4175:117;;;4265:15;4264:16;;4244:37;;4175:117;4306:7;:49;;;;;4337:18;4317:38;;:16;:38;;;;4306:49;4302:322;;;4503:8;4484:15;4476:35;4464:47;;4302:322;;;4554:59;4580:8;4590:7;4554:59;;4605:7;4599:3;:13;4554:59;;:25;:59::i;:::-;4542:71;;4302:322;1391:3239;;;;;;;;;;;;;:::o;749:3776:20:-;861:14;1190:13;1258;1375:1;1371:6;1368:1;1365;1358:20;1407:1;1404;1400:9;1391:18;;1458:5;1454:2;1451:13;1443:5;1439:2;1435:14;1431:34;1422:43;;1334:141;1556:1;1547:5;:10;1543:179;;;1595:1;1581:11;:15;1573:24;;;;;;1659:11;1652:5;1648:23;1638:33;;1698:13;;;;1543:179;1849:5;1835:11;:19;1827:28;;;;;;2132:17;2208:11;2205:1;2202;2195:25;2182:38;;2351:5;2340:9;2337:20;2330:5;2326:32;2317:41;;2391:9;2384:5;2380:21;2371:30;;2560:12;2590:11;2576;2575:12;;:26;2560:41;;2712:4;2699:11;2695:22;2680:37;;2834:4;2827:5;2823:16;2814:25;;3088:1;3081:4;3074;3071:1;3067:12;3063:23;3059:31;3051:39;;3126:4;3118:5;:12;3109:21;;;;3464:11;3498:1;3483:11;3479:1;:15;3478:21;3464:35;;3739:3;3725:11;:17;3721:1;:21;3714:28;;;;3797:3;3783:11;:17;3779:1;:21;3772:28;;;;3856:3;3842:11;:17;3838:1;:21;3831:28;;;;3915:3;3901:11;:17;3897:1;:21;3890:28;;;;3974:3;3960:11;:17;3956:1;:21;3949:28;;;;4034:3;4020:11;:17;4016:1;:21;4009:28;;;;4492:3;4484:5;:11;4475:20;;4505:13;;;;;749:3776;;;;;;:::o;8727:532:26:-;8892:15;8939:13;8923:29;;:13;:29;;;8919:98;;;8988:13;9003;8954:63;;;;;;;;8919:98;9047:7;:205;;9177:75;9193:9;9177:75;;9220:13;9204;:29;9177:75;;349:27:19;9177:15:26;:75::i;:::-;9047:205;;;9073:85;9099:9;9073:85;;9126:13;9110;:29;9073:85;;349:27:19;9073:25:26;:85::i;:::-;9047:205;9028:224;;8727:532;;;;;;:::o;7493:779::-;7658:15;7705:13;7689:29;;:13;:29;;;7685:98;;;7754:13;7769;7720:63;;;;;;;;7685:98;7794:18;309:2:19;7815:45:26;;7823:9;7815:18;;:45;;7794:66;;7870:18;7907:13;7891;:29;7870:50;;;;7955:1;7939:13;:17;;;7931:26;;;;;;7987:7;:278;;8252:13;8195:70;;:54;8211:10;8223;8235:13;8195:54;;:15;:54::i;:::-;:70;;;;;;7987:278;;;8013:163;8059:64;8085:10;8097;8109:13;8059:64;;:25;:64::i;:::-;8145:13;8013:163;;:24;:163::i;:::-;7987:278;7968:297;;;;7493:779;;;;;;:::o;5299:550::-;5467:16;5514:1;5503:8;:12;;;5495:21;;;;;;5546:1;5534:9;:13;;;5526:22;;;;;;5644:10;:198;;5766:76;5806:8;5816:9;5827:8;5837:4;5766:39;:76::i;:::-;5644:198;;;5673:74;5711:8;5721:9;5732:8;5742:4;5673:37;:74::i;:::-;5644:198;5625:217;;5299:550;;;;;;:::o;6395:::-;6565:16;6612:1;6601:8;:12;;;6593:21;;;;;;6644:1;6632:9;:13;;;6624:22;;;;;;6736:10;:202;;6862:76;6900:8;6910:9;6921;6932:5;6862:37;:76::i;:::-;6736:202;;;6765:78;6805:8;6815:9;6826;6837:5;6765:39;:78::i;:::-;6736:202;6717:221;;6395:550;;;;;;:::o;4807:315:20:-;4929:14;4964:25;4971:1;4974;4977:11;4964:6;:25::i;:::-;4955:34;;5031:1;5016:11;5003:25;;;;;5013:1;5010;5003:25;:29;4999:117;;;5065:17;5056:6;:26;5048:35;;;;;;5097:8;;;;;;;4999:117;4807:315;;;;;:::o;492:165:32:-;560:9;638:1;634;631;627:9;624:16;620:1;617;613:9;609:32;604:37;;590:61;;;;:::o;3597:1153:26:-;3770:7;3947:3;3943:801;;;3966:16;4033:17;4023:27;;:6;:27;;:180;;4151:52;4167:6;349:27:19;4193:9:26;4151:52;;:15;:52::i;:::-;4023:180;;;4115:9;4077:47;;309:2:19;4078:33:26;;:6;:33;;4077:47;;;;;;4023:180;3966:255;;4243:43;:31;4265:8;4251;4243:17;;:21;;:31;;;;:::i;:::-;:41;:43::i;:::-;4236:50;;;;;3943:801;4317:16;4384:17;4374:27;;:6;:27;;:213;;4525:62;4551:6;349:27:19;4577:9:26;4525:62;;:25;:62::i;:::-;4374:213;;;4428:70;309:2:19;4453:33:26;;:6;:33;;4488:9;4428:70;;:24;:70::i;:::-;4374:213;4317:288;;4639:8;4628;:19;;;4620:28;;;;;;4724:8;4713;:19;;;4698:35;;;3597:1153;;;;;;;:::o;1405:1366::-;1576:7;1721:1;1711:6;:11;1707:32;;;1731:8;1724:15;;;;1707:32;1749:18;309:2:19;1770:45:26;;1778:9;1770:18;;:45;;1749:66;;1830:3;1826:939;;;1849:15;1924:8;1882:50;;1914:6;1902:8;1893:17;;:6;:17;1883:27;;;1882:38;;;;;;:50;1878:323;;;1952:19;1987:7;1974:10;:20;1952:42;;2031:10;2016:11;:25;2012:174;;2125:60;2151:10;2163:8;2125:60;;2173:11;2125:25;:60::i;:::-;2110:76;;;;;;;2012:174;1878:323;;2230:73;2255:10;2267:35;2295:6;2281:8;2268:21;;:10;:21;;;;;;2267:27;;:35;;;;:::i;:::-;2230:24;:73::i;:::-;2215:89;;;;;;1826:939;2335:15;2572:8;2530:50;;2562:6;2550:8;2541:17;;:6;:17;2531:27;;;2530:38;;;;;;:50;:74;;;;;2597:7;2584:10;:20;2530:74;2522:83;;;;;;2619:19;2654:7;2641:10;:20;2619:42;;2682:72;:60;2708:10;2720:8;2682:60;;2730:11;2682:25;:60::i;:::-;:70;:72::i;:::-;2675:79;;;;;1405:1366;;;;;;;:::o;435:111:22:-;493:9;537:1;531;527;:5;523:9;;;522:16;;514:25;;;;;;435:111;;;;:::o;357::25:-;410:9;459:1;452;440:14;;;439:21;;;431:30;;;;;;357:111;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity =0.7.6;\n\nimport '../libraries/SwapMath.sol';\n\ncontract SwapMathTest {\n    function computeSwapStep(\n        uint160 sqrtP,\n        uint160 sqrtPTarget,\n        uint128 liquidity,\n        int256 amountRemaining,\n        uint24 feePips\n    )\n        external\n        pure\n        returns (\n            uint160 sqrtQ,\n            uint256 amountIn,\n            uint256 amountOut,\n            uint256 feeAmount\n        )\n    {\n        return SwapMath.computeSwapStep(sqrtP, sqrtPTarget, liquidity, amountRemaining, feePips);\n    }\n\n    function getGasCostOfComputeSwapStep(\n        uint160 sqrtP,\n        uint160 sqrtPTarget,\n        uint128 liquidity,\n        int256 amountRemaining,\n        uint24 feePips\n    ) external view returns (uint256) {\n        uint256 gasBefore = gasleft();\n        SwapMath.computeSwapStep(sqrtP, sqrtPTarget, liquidity, amountRemaining, feePips);\n        return gasBefore - gasleft();\n    }\n}\n",
+  "sourcePath": "/mnt/c/pr0/blockchain-projects/DeFi_Learning/UniswapV3/UniswapV3Contracts/v3-core/contracts/test/SwapMathTest.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/test/SwapMathTest.sol",
+    "exportedSymbols": {
+      "FixedPoint96": [
+        3817
+      ],
+      "FullMath": [
+        3990
+      ],
+      "LowGasSafeMath": [
+        4172
+      ],
+      "SafeCast": [
+        5150
+      ],
+      "SqrtPriceMath": [
+        5666
+      ],
+      "SwapMath": [
+        5927
+      ],
+      "SwapMathTest": [
+        10372
+      ],
+      "UnsafeMath": [
+        7237
+      ]
+    },
+    "id": 10373,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10303,
+        "literals": [
+          "solidity",
+          "=",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:47"
+      },
+      {
+        "absolutePath": "project:/contracts/libraries/SwapMath.sol",
+        "file": "../libraries/SwapMath.sol",
+        "id": 10304,
+        "nodeType": "ImportDirective",
+        "scope": 10373,
+        "sourceUnit": 5928,
+        "src": "64:35:47",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 10372,
+        "linearizedBaseContracts": [
+          10372
+        ],
+        "name": "SwapMathTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 10334,
+              "nodeType": "Block",
+              "src": "475:105:47",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 10327,
+                        "name": "sqrtP",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10306,
+                        "src": "517:5:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      },
+                      {
+                        "id": 10328,
+                        "name": "sqrtPTarget",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10308,
+                        "src": "524:11:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      },
+                      {
+                        "id": 10329,
+                        "name": "liquidity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10310,
+                        "src": "537:9:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "id": 10330,
+                        "name": "amountRemaining",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10312,
+                        "src": "548:15:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      {
+                        "id": 10331,
+                        "name": "feePips",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10314,
+                        "src": "565:7:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint24",
+                          "typeString": "uint24"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        },
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        },
+                        {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        },
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint24",
+                          "typeString": "uint24"
+                        }
+                      ],
+                      "expression": {
+                        "id": 10325,
+                        "name": "SwapMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5927,
+                        "src": "492:8:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_SwapMath_$5927_$",
+                          "typeString": "type(library SwapMath)"
+                        }
+                      },
+                      "id": 10326,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "computeSwapStep",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5926,
+                      "src": "492:24:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint160_$_t_uint160_$_t_uint128_$_t_int256_$_t_uint24_$returns$_t_uint160_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "function (uint160,uint160,uint128,int256,uint24) pure returns (uint160,uint256,uint256,uint256)"
+                      }
+                    },
+                    "id": 10332,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "492:81:47",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint160_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint160,uint256,uint256,uint256)"
+                    }
+                  },
+                  "functionReturnParameters": 10324,
+                  "id": 10333,
+                  "nodeType": "Return",
+                  "src": "485:88:47"
+                }
+              ]
+            },
+            "functionSelector": "100d3f74",
+            "id": 10335,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "computeSwapStep",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10315,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10306,
+                  "mutability": "mutable",
+                  "name": "sqrtP",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "163:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 10305,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "163:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10308,
+                  "mutability": "mutable",
+                  "name": "sqrtPTarget",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "186:19:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 10307,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "186:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10310,
+                  "mutability": "mutable",
+                  "name": "liquidity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "215:17:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 10309,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "215:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10312,
+                  "mutability": "mutable",
+                  "name": "amountRemaining",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "242:22:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 10311,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "242:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10314,
+                  "mutability": "mutable",
+                  "name": "feePips",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "274:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint24",
+                    "typeString": "uint24"
+                  },
+                  "typeName": {
+                    "id": 10313,
+                    "name": "uint24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "274:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint24",
+                      "typeString": "uint24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "153:141:47"
+            },
+            "returnParameters": {
+              "id": 10324,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10317,
+                  "mutability": "mutable",
+                  "name": "sqrtQ",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "355:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 10316,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "355:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10319,
+                  "mutability": "mutable",
+                  "name": "amountIn",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "382:16:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10318,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "382:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10321,
+                  "mutability": "mutable",
+                  "name": "amountOut",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "412:17:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10320,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "412:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10323,
+                  "mutability": "mutable",
+                  "name": "feeAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10335,
+                  "src": "443:17:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10322,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "443:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "341:129:47"
+            },
+            "scope": 10372,
+            "src": "129:451:47",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10370,
+              "nodeType": "Block",
+              "src": "796:175:47",
+              "statements": [
+                {
+                  "assignments": [
+                    10351
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 10351,
+                      "mutability": "mutable",
+                      "name": "gasBefore",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 10370,
+                      "src": "806:17:47",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 10350,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "806:7:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 10354,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 10352,
+                      "name": "gasleft",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967289,
+                      "src": "826:7:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 10353,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "826:9:47",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "806:29:47"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 10358,
+                        "name": "sqrtP",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10337,
+                        "src": "870:5:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      },
+                      {
+                        "id": 10359,
+                        "name": "sqrtPTarget",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10339,
+                        "src": "877:11:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      },
+                      {
+                        "id": 10360,
+                        "name": "liquidity",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10341,
+                        "src": "890:9:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        }
+                      },
+                      {
+                        "id": 10361,
+                        "name": "amountRemaining",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10343,
+                        "src": "901:15:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        }
+                      },
+                      {
+                        "id": 10362,
+                        "name": "feePips",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10345,
+                        "src": "918:7:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint24",
+                          "typeString": "uint24"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        },
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        },
+                        {
+                          "typeIdentifier": "t_uint128",
+                          "typeString": "uint128"
+                        },
+                        {
+                          "typeIdentifier": "t_int256",
+                          "typeString": "int256"
+                        },
+                        {
+                          "typeIdentifier": "t_uint24",
+                          "typeString": "uint24"
+                        }
+                      ],
+                      "expression": {
+                        "id": 10355,
+                        "name": "SwapMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5927,
+                        "src": "845:8:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_SwapMath_$5927_$",
+                          "typeString": "type(library SwapMath)"
+                        }
+                      },
+                      "id": 10357,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "computeSwapStep",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5926,
+                      "src": "845:24:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint160_$_t_uint160_$_t_uint128_$_t_int256_$_t_uint24_$returns$_t_uint160_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                        "typeString": "function (uint160,uint160,uint128,int256,uint24) pure returns (uint160,uint256,uint256,uint256)"
+                      }
+                    },
+                    "id": 10363,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "845:81:47",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$_t_uint160_$_t_uint256_$_t_uint256_$_t_uint256_$",
+                      "typeString": "tuple(uint160,uint256,uint256,uint256)"
+                    }
+                  },
+                  "id": 10364,
+                  "nodeType": "ExpressionStatement",
+                  "src": "845:81:47"
+                },
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 10368,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 10365,
+                      "name": "gasBefore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10351,
+                      "src": "943:9:47",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 10366,
+                        "name": "gasleft",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967289,
+                        "src": "955:7:47",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                          "typeString": "function () view returns (uint256)"
+                        }
+                      },
+                      "id": 10367,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "955:9:47",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "943:21:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 10349,
+                  "id": 10369,
+                  "nodeType": "Return",
+                  "src": "936:28:47"
+                }
+              ]
+            },
+            "functionSelector": "d28c51b7",
+            "id": 10371,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGasCostOfComputeSwapStep",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10346,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10337,
+                  "mutability": "mutable",
+                  "name": "sqrtP",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10371,
+                  "src": "632:13:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 10336,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "632:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10339,
+                  "mutability": "mutable",
+                  "name": "sqrtPTarget",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10371,
+                  "src": "655:19:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 10338,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "655:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10341,
+                  "mutability": "mutable",
+                  "name": "liquidity",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10371,
+                  "src": "684:17:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint128",
+                    "typeString": "uint128"
+                  },
+                  "typeName": {
+                    "id": 10340,
+                    "name": "uint128",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "684:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint128",
+                      "typeString": "uint128"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10343,
+                  "mutability": "mutable",
+                  "name": "amountRemaining",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10371,
+                  "src": "711:22:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 10342,
+                    "name": "int256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "711:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10345,
+                  "mutability": "mutable",
+                  "name": "feePips",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10371,
+                  "src": "743:14:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint24",
+                    "typeString": "uint24"
+                  },
+                  "typeName": {
+                    "id": 10344,
+                    "name": "uint24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "743:6:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint24",
+                      "typeString": "uint24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "622:141:47"
+            },
+            "returnParameters": {
+              "id": 10349,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10348,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10371,
+                  "src": "787:7:47",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10347,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "787:7:47",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "786:9:47"
+            },
+            "scope": 10372,
+            "src": "586:385:47",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 10373,
+        "src": "101:872:47"
+      }
+    ],
+    "src": "39:935:47"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/test/SwapMathTest.sol",
+      "exportedSymbols": {
+        "FixedPoint96": [
+          3817
+        ],
+        "FullMath": [
+          3990
+        ],
+        "LowGasSafeMath": [
+          4172
+        ],
+        "SafeCast": [
+          5150
+        ],
+        "SqrtPriceMath": [
+          5666
+        ],
+        "SwapMath": [
+          5927
+        ],
+        "SwapMathTest": [
+          10372
+        ],
+        "UnsafeMath": [
+          7237
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "=",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 10303,
+        "name": "PragmaDirective",
+        "src": "39:23:47"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5928,
+          "absolutePath": "project:/contracts/libraries/SwapMath.sol",
+          "file": "../libraries/SwapMath.sol",
+          "scope": 10373,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 10304,
+        "name": "ImportDirective",
+        "src": "64:35:47"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            10372
+          ],
+          "name": "SwapMathTest",
+          "scope": 10373
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "100d3f74",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "computeSwapStep",
+              "scope": 10372,
+              "stateMutability": "pure",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtP",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 10305,
+                        "name": "ElementaryTypeName",
+                        "src": "163:7:47"
+                      }
+                    ],
+                    "id": 10306,
+                    "name": "VariableDeclaration",
+                    "src": "163:13:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPTarget",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 10307,
+                        "name": "ElementaryTypeName",
+                        "src": "186:7:47"
+                      }
+                    ],
+                    "id": 10308,
+                    "name": "VariableDeclaration",
+                    "src": "186:19:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "liquidity",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 10309,
+                        "name": "ElementaryTypeName",
+                        "src": "215:7:47"
+                      }
+                    ],
+                    "id": 10310,
+                    "name": "VariableDeclaration",
+                    "src": "215:17:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amountRemaining",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int256",
+                          "type": "int256"
+                        },
+                        "id": 10311,
+                        "name": "ElementaryTypeName",
+                        "src": "242:6:47"
+                      }
+                    ],
+                    "id": 10312,
+                    "name": "VariableDeclaration",
+                    "src": "242:22:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "feePips",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint24",
+                          "type": "uint24"
+                        },
+                        "id": 10313,
+                        "name": "ElementaryTypeName",
+                        "src": "274:6:47"
+                      }
+                    ],
+                    "id": 10314,
+                    "name": "VariableDeclaration",
+                    "src": "274:14:47"
+                  }
+                ],
+                "id": 10315,
+                "name": "ParameterList",
+                "src": "153:141:47"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtQ",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 10316,
+                        "name": "ElementaryTypeName",
+                        "src": "355:7:47"
+                      }
+                    ],
+                    "id": 10317,
+                    "name": "VariableDeclaration",
+                    "src": "355:13:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amountIn",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 10318,
+                        "name": "ElementaryTypeName",
+                        "src": "382:7:47"
+                      }
+                    ],
+                    "id": 10319,
+                    "name": "VariableDeclaration",
+                    "src": "382:16:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amountOut",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 10320,
+                        "name": "ElementaryTypeName",
+                        "src": "412:7:47"
+                      }
+                    ],
+                    "id": 10321,
+                    "name": "VariableDeclaration",
+                    "src": "412:17:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "feeAmount",
+                      "scope": 10335,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 10322,
+                        "name": "ElementaryTypeName",
+                        "src": "443:7:47"
+                      }
+                    ],
+                    "id": 10323,
+                    "name": "VariableDeclaration",
+                    "src": "443:17:47"
+                  }
+                ],
+                "id": 10324,
+                "name": "ParameterList",
+                "src": "341:129:47"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 10324
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple(uint160,uint256,uint256,uint256)",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint160",
+                                  "typeString": "uint160"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint160",
+                                  "typeString": "uint160"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint128",
+                                  "typeString": "uint128"
+                                },
+                                {
+                                  "typeIdentifier": "t_int256",
+                                  "typeString": "int256"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint24",
+                                  "typeString": "uint24"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "computeSwapStep",
+                              "referencedDeclaration": 5926,
+                              "type": "function (uint160,uint160,uint128,int256,uint24) pure returns (uint160,uint256,uint256,uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 5927,
+                                  "type": "type(library SwapMath)",
+                                  "value": "SwapMath"
+                                },
+                                "id": 10325,
+                                "name": "Identifier",
+                                "src": "492:8:47"
+                              }
+                            ],
+                            "id": 10326,
+                            "name": "MemberAccess",
+                            "src": "492:24:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10306,
+                              "type": "uint160",
+                              "value": "sqrtP"
+                            },
+                            "id": 10327,
+                            "name": "Identifier",
+                            "src": "517:5:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10308,
+                              "type": "uint160",
+                              "value": "sqrtPTarget"
+                            },
+                            "id": 10328,
+                            "name": "Identifier",
+                            "src": "524:11:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10310,
+                              "type": "uint128",
+                              "value": "liquidity"
+                            },
+                            "id": 10329,
+                            "name": "Identifier",
+                            "src": "537:9:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10312,
+                              "type": "int256",
+                              "value": "amountRemaining"
+                            },
+                            "id": 10330,
+                            "name": "Identifier",
+                            "src": "548:15:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10314,
+                              "type": "uint24",
+                              "value": "feePips"
+                            },
+                            "id": 10331,
+                            "name": "Identifier",
+                            "src": "565:7:47"
+                          }
+                        ],
+                        "id": 10332,
+                        "name": "FunctionCall",
+                        "src": "492:81:47"
+                      }
+                    ],
+                    "id": 10333,
+                    "name": "Return",
+                    "src": "485:88:47"
+                  }
+                ],
+                "id": 10334,
+                "name": "Block",
+                "src": "475:105:47"
+              }
+            ],
+            "id": 10335,
+            "name": "FunctionDefinition",
+            "src": "129:451:47"
+          },
+          {
+            "attributes": {
+              "functionSelector": "d28c51b7",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getGasCostOfComputeSwapStep",
+              "scope": 10372,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtP",
+                      "scope": 10371,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 10336,
+                        "name": "ElementaryTypeName",
+                        "src": "632:7:47"
+                      }
+                    ],
+                    "id": 10337,
+                    "name": "VariableDeclaration",
+                    "src": "632:13:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPTarget",
+                      "scope": 10371,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 10338,
+                        "name": "ElementaryTypeName",
+                        "src": "655:7:47"
+                      }
+                    ],
+                    "id": 10339,
+                    "name": "VariableDeclaration",
+                    "src": "655:19:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "liquidity",
+                      "scope": 10371,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint128",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint128",
+                          "type": "uint128"
+                        },
+                        "id": 10340,
+                        "name": "ElementaryTypeName",
+                        "src": "684:7:47"
+                      }
+                    ],
+                    "id": 10341,
+                    "name": "VariableDeclaration",
+                    "src": "684:17:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "amountRemaining",
+                      "scope": 10371,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int256",
+                          "type": "int256"
+                        },
+                        "id": 10342,
+                        "name": "ElementaryTypeName",
+                        "src": "711:6:47"
+                      }
+                    ],
+                    "id": 10343,
+                    "name": "VariableDeclaration",
+                    "src": "711:22:47"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "feePips",
+                      "scope": 10371,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint24",
+                          "type": "uint24"
+                        },
+                        "id": 10344,
+                        "name": "ElementaryTypeName",
+                        "src": "743:6:47"
+                      }
+                    ],
+                    "id": 10345,
+                    "name": "VariableDeclaration",
+                    "src": "743:14:47"
+                  }
+                ],
+                "id": 10346,
+                "name": "ParameterList",
+                "src": "622:141:47"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 10371,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 10347,
+                        "name": "ElementaryTypeName",
+                        "src": "787:7:47"
+                      }
+                    ],
+                    "id": 10348,
+                    "name": "VariableDeclaration",
+                    "src": "787:7:47"
+                  }
+                ],
+                "id": 10349,
+                "name": "ParameterList",
+                "src": "786:9:47"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        10351
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "gasBefore",
+                          "scope": 10370,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 10350,
+                            "name": "ElementaryTypeName",
+                            "src": "806:7:47"
+                          }
+                        ],
+                        "id": 10351,
+                        "name": "VariableDeclaration",
+                        "src": "806:17:47"
+                      },
+                      {
+                        "attributes": {
+                          "arguments": [
+                            null
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                null
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4294967289,
+                              "type": "function () view returns (uint256)",
+                              "value": "gasleft"
+                            },
+                            "id": 10352,
+                            "name": "Identifier",
+                            "src": "826:7:47"
+                          }
+                        ],
+                        "id": 10353,
+                        "name": "FunctionCall",
+                        "src": "826:9:47"
+                      }
+                    ],
+                    "id": 10354,
+                    "name": "VariableDeclarationStatement",
+                    "src": "806:29:47"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple(uint160,uint256,uint256,uint256)",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint160",
+                                  "typeString": "uint160"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint160",
+                                  "typeString": "uint160"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint128",
+                                  "typeString": "uint128"
+                                },
+                                {
+                                  "typeIdentifier": "t_int256",
+                                  "typeString": "int256"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint24",
+                                  "typeString": "uint24"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "computeSwapStep",
+                              "referencedDeclaration": 5926,
+                              "type": "function (uint160,uint160,uint128,int256,uint24) pure returns (uint160,uint256,uint256,uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 5927,
+                                  "type": "type(library SwapMath)",
+                                  "value": "SwapMath"
+                                },
+                                "id": 10355,
+                                "name": "Identifier",
+                                "src": "845:8:47"
+                              }
+                            ],
+                            "id": 10357,
+                            "name": "MemberAccess",
+                            "src": "845:24:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10337,
+                              "type": "uint160",
+                              "value": "sqrtP"
+                            },
+                            "id": 10358,
+                            "name": "Identifier",
+                            "src": "870:5:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10339,
+                              "type": "uint160",
+                              "value": "sqrtPTarget"
+                            },
+                            "id": 10359,
+                            "name": "Identifier",
+                            "src": "877:11:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10341,
+                              "type": "uint128",
+                              "value": "liquidity"
+                            },
+                            "id": 10360,
+                            "name": "Identifier",
+                            "src": "890:9:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10343,
+                              "type": "int256",
+                              "value": "amountRemaining"
+                            },
+                            "id": 10361,
+                            "name": "Identifier",
+                            "src": "901:15:47"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10345,
+                              "type": "uint24",
+                              "value": "feePips"
+                            },
+                            "id": 10362,
+                            "name": "Identifier",
+                            "src": "918:7:47"
+                          }
+                        ],
+                        "id": 10363,
+                        "name": "FunctionCall",
+                        "src": "845:81:47"
+                      }
+                    ],
+                    "id": 10364,
+                    "name": "ExpressionStatement",
+                    "src": "845:81:47"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 10349
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "-",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10351,
+                              "type": "uint256",
+                              "value": "gasBefore"
+                            },
+                            "id": 10365,
+                            "name": "Identifier",
+                            "src": "943:9:47"
+                          },
+                          {
+                            "attributes": {
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4294967289,
+                                  "type": "function () view returns (uint256)",
+                                  "value": "gasleft"
+                                },
+                                "id": 10366,
+                                "name": "Identifier",
+                                "src": "955:7:47"
+                              }
+                            ],
+                            "id": 10367,
+                            "name": "FunctionCall",
+                            "src": "955:9:47"
+                          }
+                        ],
+                        "id": 10368,
+                        "name": "BinaryOperation",
+                        "src": "943:21:47"
+                      }
+                    ],
+                    "id": 10369,
+                    "name": "Return",
+                    "src": "936:28:47"
+                  }
+                ],
+                "id": 10370,
+                "name": "Block",
+                "src": "796:175:47"
+              }
+            ],
+            "id": 10371,
+            "name": "FunctionDefinition",
+            "src": "586:385:47"
+          }
+        ],
+        "id": 10372,
+        "name": "ContractDefinition",
+        "src": "101:872:47"
+      }
+    ],
+    "id": 10373,
+    "name": "SourceUnit",
+    "src": "39:935:47"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-10-07T19:09:47.797Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
