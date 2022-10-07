@@ -1,0 +1,2552 @@
+{
+  "contractName": "TickMathTest",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "int24",
+          "name": "tick",
+          "type": "int24"
+        }
+      ],
+      "name": "getSqrtRatioAtTick",
+      "outputs": [
+        {
+          "internalType": "uint160",
+          "name": "",
+          "type": "uint160"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int24",
+          "name": "tick",
+          "type": "int24"
+        }
+      ],
+      "name": "getGasCostOfGetSqrtRatioAtTick",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint160",
+          "name": "sqrtPriceX96",
+          "type": "uint160"
+        }
+      ],
+      "name": "getTickAtSqrtRatio",
+      "outputs": [
+        {
+          "internalType": "int24",
+          "name": "",
+          "type": "int24"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint160",
+          "name": "sqrtPriceX96",
+          "type": "uint160"
+        }
+      ],
+      "name": "getGasCostOfGetTickAtSqrtRatio",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MIN_SQRT_RATIO",
+      "outputs": [
+        {
+          "internalType": "uint160",
+          "name": "",
+          "type": "uint160"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_SQRT_RATIO",
+      "outputs": [
+        {
+          "internalType": "uint160",
+          "name": "",
+          "type": "uint160"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.6+commit.7338295f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"MAX_SQRT_RATIO\",\"outputs\":[{\"internalType\":\"uint160\",\"name\":\"\",\"type\":\"uint160\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MIN_SQRT_RATIO\",\"outputs\":[{\"internalType\":\"uint160\",\"name\":\"\",\"type\":\"uint160\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int24\",\"name\":\"tick\",\"type\":\"int24\"}],\"name\":\"getGasCostOfGetSqrtRatioAtTick\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint160\",\"name\":\"sqrtPriceX96\",\"type\":\"uint160\"}],\"name\":\"getGasCostOfGetTickAtSqrtRatio\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int24\",\"name\":\"tick\",\"type\":\"int24\"}],\"name\":\"getSqrtRatioAtTick\",\"outputs\":[{\"internalType\":\"uint160\",\"name\":\"\",\"type\":\"uint160\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint160\",\"name\":\"sqrtPriceX96\",\"type\":\"uint160\"}],\"name\":\"getTickAtSqrtRatio\",\"outputs\":[{\"internalType\":\"int24\",\"name\":\"\",\"type\":\"int24\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/test/TickMathTest.sol\":\"TickMathTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/libraries/TickMath.sol\":{\"keccak256\":\"0xda8c2c0b12d2976acfd364453ba5f5bf0117ba3c91175ee9e1067d3fb26944d9\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://3f3d2d7c2723c91830c74d96292f28fc1cfe28d388cdb9c1a5ebadb4c2b96f81\",\"dweb:/ipfs/QmYU4wk8MEm33wVWR38LoncvR7b8PP1mLuGBKX3dUpYJVE\"]},\"project:/contracts/test/TickMathTest.sol\":{\"keccak256\":\"0x08834282a42f8e5875ea4d02afe8761500928ccf29fd1538b5808e69de6d973d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://0e8bd078434f24a26c26d268fc46bed0a06f1d8c3f5243ebb805039a0f282d84\",\"dweb:/ipfs/QmWYgrwFHE8h1JMjUADd3dADgwupQnDBUNrnynyNYAdSHz\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610b12806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80634f76c058146100675780636d2cc304146100c2578063986cfba3146100f6578063a7398eb414610151578063b0622f6714610196578063ee8847ff146101ee575b600080fd5b6100a96004803603602081101561007d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610222565b604051808260020b815260200191505060405180910390f35b6100ca610234565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101256004803603602081101561010c57600080fd5b81019080803560020b9060200190929190505050610250565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101806004803603602081101561016757600080fd5b81019080803560020b9060200190929190505050610262565b6040518082815260200191505060405180910390f35b6101d8600480360360208110156101ac57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061027d565b6040518082815260200191505060405180910390f35b6101f6610298565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600061022d826102a5565b9050919050565b600073fffd8963efd1fc6a506488495d951d5263988d26905090565b600061025b826106a1565b9050919050565b6000805a9050610271836106a1565b505a8103915050919050565b6000805a905061028c836102a5565b505a8103915050919050565b60006401000276a3905090565b60006401000276a373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1610158015610327575073fffd8963efd1fc6a506488495d951d5263988d2673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16105b610399576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260018152602001807f520000000000000000000000000000000000000000000000000000000000000081525060200191505060405180910390fd5b600060208373ffffffffffffffffffffffffffffffffffffffff16901b9050600081905060006fffffffffffffffffffffffffffffffff821160071b808217915082811c92505067ffffffffffffffff821160061b808217915082811c92505063ffffffff821160051b808217915082811c92505061ffff821160041b808217915082811c92505060ff821160031b808217915082811c925050600f821160021b808217915082811c9250506003821160011b808217915082811c925050600182118082179150506080811061047757607f810383901c9150610481565b80607f0383901b91505b6000604060808303901b9050828302607f1c92508260801c80603f1b8217915083811c935050828302607f1c92508260801c80603e1b8217915083811c935050828302607f1c92508260801c80603d1b8217915083811c935050828302607f1c92508260801c80603c1b8217915083811c935050828302607f1c92508260801c80603b1b8217915083811c935050828302607f1c92508260801c80603a1b8217915083811c935050828302607f1c92508260801c8060391b8217915083811c935050828302607f1c92508260801c8060381b8217915083811c935050828302607f1c92508260801c8060371b8217915083811c935050828302607f1c92508260801c8060361b8217915083811c935050828302607f1c92508260801c8060351b8217915083811c935050828302607f1c92508260801c8060341b8217915083811c935050828302607f1c92508260801c8060331b8217915083811c935050828302607f1c92508260801c8060321b82179150506000693627a301d71055774c8582029050600060806f028f6481ab7f045a5af012a19d003aaa8303901d9050600060806fdb2df09e81959a81455e260799a0632f8401901d90508060020b8260020b14610691578873ffffffffffffffffffffffffffffffffffffffff16610668826106a1565b73ffffffffffffffffffffffffffffffffffffffff16111561068a578161068c565b805b610693565b815b975050505050505050919050565b60008060008360020b126106b8578260020b6106c0565b8260020b6000035b90507ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2761860000360020b81111561075e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260018152602001807f540000000000000000000000000000000000000000000000000000000000000081525060200191505060405180910390fd5b60008060018316141561078257700100000000000000000000000000000000610794565b6ffffcb933bd6fad37aa2d162d1a5940015b70ffffffffffffffffffffffffffffffffff169050600060028316146107ce5760806ffff97272373d413259a46990580e213a8202901c90505b600060048316146107f35760806ffff2e50f5f656932ef12357cf3c7fdcc8202901c90505b600060088316146108185760806fffe5caca7e10e4e61c3624eaa0941cd08202901c90505b6000601083161461083d5760806fffcb9843d60f6159c9db58835c9266448202901c90505b600060208316146108625760806fff973b41fa98c081472e6896dfb254c08202901c90505b600060408316146108875760806fff2ea16466c96a3843ec78b326b528618202901c90505b600060808316146108ac5760806ffe5dee046a99a2a811c461f1969c30538202901c90505b60006101008316146108d25760806ffcbe86c7900a88aedcffc83b479aa3a48202901c90505b60006102008316146108f85760806ff987a7253ac413176f2b074cf7815e548202901c90505b600061040083161461091e5760806ff3392b0822b70005940c7a398e4b70f38202901c90505b60006108008316146109445760806fe7159475a2c29b7443b29c7fa6e889d98202901c90505b600061100083161461096a5760806fd097f3bdfd2022b8845ad8f792aa58258202901c90505b60006120008316146109905760806fa9f746462d870fdf8a65dc1f90e061e58202901c90505b60006140008316146109b65760806f70d869a156d2a1b890bb3df62baf32f78202901c90505b60006180008316146109dc5760806f31be135f97d08fd981231505542fcfa68202901c90505b600062010000831614610a035760806f09aa508b5b7a84e1c677de54f3e99bc98202901c90505b600062020000831614610a295760806e5d6af8dedb81196699c329225ee6048202901c90505b600062040000831614610a4e5760806d2216e584f5fa1ea926041bedfe988202901c90505b600062080000831614610a715760806b048a170391f7dc42444e8fa28202901c90505b60008460020b1315610aaa57807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff81610aa657fe5b0490505b60006401000000008281610aba57fe5b0614610ac7576001610aca565b60005b60ff16602082901c019250505091905056fea26469706673582212203cb99dbe0c89956b3241403333addb82f6508e127aa46bb8eff6a6c1ab8d6f6e64736f6c63430007060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80634f76c058146100675780636d2cc304146100c2578063986cfba3146100f6578063a7398eb414610151578063b0622f6714610196578063ee8847ff146101ee575b600080fd5b6100a96004803603602081101561007d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610222565b604051808260020b815260200191505060405180910390f35b6100ca610234565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101256004803603602081101561010c57600080fd5b81019080803560020b9060200190929190505050610250565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101806004803603602081101561016757600080fd5b81019080803560020b9060200190929190505050610262565b6040518082815260200191505060405180910390f35b6101d8600480360360208110156101ac57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061027d565b6040518082815260200191505060405180910390f35b6101f6610298565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b600061022d826102a5565b9050919050565b600073fffd8963efd1fc6a506488495d951d5263988d26905090565b600061025b826106a1565b9050919050565b6000805a9050610271836106a1565b505a8103915050919050565b6000805a905061028c836102a5565b505a8103915050919050565b60006401000276a3905090565b60006401000276a373ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff1610158015610327575073fffd8963efd1fc6a506488495d951d5263988d2673ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16105b610399576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260018152602001807f520000000000000000000000000000000000000000000000000000000000000081525060200191505060405180910390fd5b600060208373ffffffffffffffffffffffffffffffffffffffff16901b9050600081905060006fffffffffffffffffffffffffffffffff821160071b808217915082811c92505067ffffffffffffffff821160061b808217915082811c92505063ffffffff821160051b808217915082811c92505061ffff821160041b808217915082811c92505060ff821160031b808217915082811c925050600f821160021b808217915082811c9250506003821160011b808217915082811c925050600182118082179150506080811061047757607f810383901c9150610481565b80607f0383901b91505b6000604060808303901b9050828302607f1c92508260801c80603f1b8217915083811c935050828302607f1c92508260801c80603e1b8217915083811c935050828302607f1c92508260801c80603d1b8217915083811c935050828302607f1c92508260801c80603c1b8217915083811c935050828302607f1c92508260801c80603b1b8217915083811c935050828302607f1c92508260801c80603a1b8217915083811c935050828302607f1c92508260801c8060391b8217915083811c935050828302607f1c92508260801c8060381b8217915083811c935050828302607f1c92508260801c8060371b8217915083811c935050828302607f1c92508260801c8060361b8217915083811c935050828302607f1c92508260801c8060351b8217915083811c935050828302607f1c92508260801c8060341b8217915083811c935050828302607f1c92508260801c8060331b8217915083811c935050828302607f1c92508260801c8060321b82179150506000693627a301d71055774c8582029050600060806f028f6481ab7f045a5af012a19d003aaa8303901d9050600060806fdb2df09e81959a81455e260799a0632f8401901d90508060020b8260020b14610691578873ffffffffffffffffffffffffffffffffffffffff16610668826106a1565b73ffffffffffffffffffffffffffffffffffffffff16111561068a578161068c565b805b610693565b815b975050505050505050919050565b60008060008360020b126106b8578260020b6106c0565b8260020b6000035b90507ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2761860000360020b81111561075e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260018152602001807f540000000000000000000000000000000000000000000000000000000000000081525060200191505060405180910390fd5b60008060018316141561078257700100000000000000000000000000000000610794565b6ffffcb933bd6fad37aa2d162d1a5940015b70ffffffffffffffffffffffffffffffffff169050600060028316146107ce5760806ffff97272373d413259a46990580e213a8202901c90505b600060048316146107f35760806ffff2e50f5f656932ef12357cf3c7fdcc8202901c90505b600060088316146108185760806fffe5caca7e10e4e61c3624eaa0941cd08202901c90505b6000601083161461083d5760806fffcb9843d60f6159c9db58835c9266448202901c90505b600060208316146108625760806fff973b41fa98c081472e6896dfb254c08202901c90505b600060408316146108875760806fff2ea16466c96a3843ec78b326b528618202901c90505b600060808316146108ac5760806ffe5dee046a99a2a811c461f1969c30538202901c90505b60006101008316146108d25760806ffcbe86c7900a88aedcffc83b479aa3a48202901c90505b60006102008316146108f85760806ff987a7253ac413176f2b074cf7815e548202901c90505b600061040083161461091e5760806ff3392b0822b70005940c7a398e4b70f38202901c90505b60006108008316146109445760806fe7159475a2c29b7443b29c7fa6e889d98202901c90505b600061100083161461096a5760806fd097f3bdfd2022b8845ad8f792aa58258202901c90505b60006120008316146109905760806fa9f746462d870fdf8a65dc1f90e061e58202901c90505b60006140008316146109b65760806f70d869a156d2a1b890bb3df62baf32f78202901c90505b60006180008316146109dc5760806f31be135f97d08fd981231505542fcfa68202901c90505b600062010000831614610a035760806f09aa508b5b7a84e1c677de54f3e99bc98202901c90505b600062020000831614610a295760806e5d6af8dedb81196699c329225ee6048202901c90505b600062040000831614610a4e5760806d2216e584f5fa1ea926041bedfe988202901c90505b600062080000831614610a715760806b048a170391f7dc42444e8fa28202901c90505b60008460020b1315610aaa57807fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff81610aa657fe5b0490505b60006401000000008281610aba57fe5b0614610ac7576001610aca565b60005b60ff16602082901c019250505091905056fea26469706673582212203cb99dbe0c89956b3241403333addb82f6508e127aa46bb8eff6a6c1ab8d6f6e64736f6c63430007060033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "101:984:57:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "101:984:57:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;481:145;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;978:105;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;129:129;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;264:211;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;632:229;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;867:105;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;481:145;554:5;578:41;606:12;578:27;:41::i;:::-;571:48;;481:145;;;:::o;978:105::-;1027:7;1004:49:30;1046:30:57;;978:105;:::o;129:129::-;192:7;218:33;246:4;218:27;:33::i;:::-;211:40;;129:129;;;:::o;264:211::-;339:7;358:17;378:9;358:29;;397:33;425:4;397:27;:33::i;:::-;;459:9;447;:21;440:28;;;264:211;;;:::o;632:229::-;717:7;736:17;756:9;736:29;;775:41;803:12;775:27;:41::i;:::-;;845:9;833;:21;826:28;;;632:229;;;:::o;867:105::-;916:7;824:10:30;935:30:57;;867:105;:::o;4361:4281:30:-;4434:10;824;4563:30;;:12;:30;;;;:63;;;;;1004:49;4597:29;;:12;:29;;;4563:63;4555:77;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4642:13;4683:2;4666:12;4658:21;;:27;;4642:43;;4696:9;4708:5;4696:17;;4723:11;4794:34;4791:1;4788:41;4785:1;4781:49;4858:1;4853:3;4850:10;4843:17;;4885:1;4882;4878:9;4873:14;;4758:139;4951:18;4948:1;4945:25;4942:1;4938:33;4999:1;4994:3;4991:10;4984:17;;5026:1;5023;5019:9;5014:14;;4915:123;5092:10;5089:1;5086:17;5083:1;5079:25;5132:1;5127:3;5124:10;5117:17;;5159:1;5156;5152:9;5147:14;;5056:115;5225:6;5222:1;5219:13;5216:1;5212:21;5261:1;5256:3;5253:10;5246:17;;5288:1;5285;5281:9;5276:14;;5189:111;5354:4;5351:1;5348:11;5345:1;5341:19;5388:1;5383:3;5380:10;5373:17;;5415:1;5412;5408:9;5403:14;;5318:109;5481:3;5478:1;5475:10;5472:1;5468:18;5514:1;5509:3;5506:10;5499:17;;5541:1;5538;5534:9;5529:14;;5445:108;5607:3;5604:1;5601:10;5598:1;5594:18;5640:1;5635:3;5632:10;5625:17;;5667:1;5664;5660:9;5655:14;;5571:108;5726:3;5723:1;5720:10;5758:1;5753:3;5750:10;5743:17;;5697:73;5791:3;5784;:10;5780:79;;5816:3;5810;:9;5800:5;:20;;5796:24;;5780:79;;;5855:3;5849;:9;5839:5;:20;;5835:24;;5780:79;5870:12;5908:2;5900:3;5893;5886:17;5885:25;;5870:40;;5965:1;5962;5958:9;5953:3;5949:19;5944:24;;5999:1;5994:3;5990:11;6041:1;6037:2;6033:10;6026:5;6023:21;6014:30;;6069:1;6066;6062:9;6057:14;;5930:151;6134:1;6131;6127:9;6122:3;6118:19;6113:24;;6168:1;6163:3;6159:11;6210:1;6206:2;6202:10;6195:5;6192:21;6183:30;;6238:1;6235;6231:9;6226:14;;6099:151;6303:1;6300;6296:9;6291:3;6287:19;6282:24;;6337:1;6332:3;6328:11;6379:1;6375:2;6371:10;6364:5;6361:21;6352:30;;6407:1;6404;6400:9;6395:14;;6268:151;6472:1;6469;6465:9;6460:3;6456:19;6451:24;;6506:1;6501:3;6497:11;6548:1;6544:2;6540:10;6533:5;6530:21;6521:30;;6576:1;6573;6569:9;6564:14;;6437:151;6641:1;6638;6634:9;6629:3;6625:19;6620:24;;6675:1;6670:3;6666:11;6717:1;6713:2;6709:10;6702:5;6699:21;6690:30;;6745:1;6742;6738:9;6733:14;;6606:151;6810:1;6807;6803:9;6798:3;6794:19;6789:24;;6844:1;6839:3;6835:11;6886:1;6882:2;6878:10;6871:5;6868:21;6859:30;;6914:1;6911;6907:9;6902:14;;6775:151;6979:1;6976;6972:9;6967:3;6963:19;6958:24;;7013:1;7008:3;7004:11;7055:1;7051:2;7047:10;7040:5;7037:21;7028:30;;7083:1;7080;7076:9;7071:14;;6944:151;7148:1;7145;7141:9;7136:3;7132:19;7127:24;;7182:1;7177:3;7173:11;7224:1;7220:2;7216:10;7209:5;7206:21;7197:30;;7252:1;7249;7245:9;7240:14;;7113:151;7317:1;7314;7310:9;7305:3;7301:19;7296:24;;7351:1;7346:3;7342:11;7393:1;7389:2;7385:10;7378:5;7375:21;7366:30;;7421:1;7418;7414:9;7409:14;;7282:151;7486:1;7483;7479:9;7474:3;7470:19;7465:24;;7520:1;7515:3;7511:11;7562:1;7558:2;7554:10;7547:5;7544:21;7535:30;;7590:1;7587;7583:9;7578:14;;7451:151;7655:1;7652;7648:9;7643:3;7639:19;7634:24;;7689:1;7684:3;7680:11;7731:1;7727:2;7723:10;7716:5;7713:21;7704:30;;7759:1;7756;7752:9;7747:14;;7620:151;7824:1;7821;7817:9;7812:3;7808:19;7803:24;;7858:1;7853:3;7849:11;7900:1;7896:2;7892:10;7885:5;7882:21;7873:30;;7928:1;7925;7921:9;7916:14;;7789:151;7993:1;7990;7986:9;7981:3;7977:19;7972:24;;8027:1;8022:3;8018:11;8069:1;8065:2;8061:10;8054:5;8051:21;8042:30;;8097:1;8094;8090:9;8085:14;;7958:151;8162:1;8159;8155:9;8150:3;8146:19;8141:24;;8196:1;8191:3;8187:11;8238:1;8234:2;8230:10;8223:5;8220:21;8211:30;;8127:124;8261:20;8292:24;8284:5;:32;8261:55;;8345:13;8426:3;8384:37;8368:13;:53;8367:62;;8345:85;;8440:12;8522:3;8478:39;8462:13;:55;8461:64;;8440:86;;8555:6;8544:17;;:7;:17;;;:91;;8604:12;8574:42;;:26;8593:6;8574:18;:26::i;:::-;:42;;;;:61;;8628:7;8574:61;;;8619:6;8574:61;8544:91;;;8564:7;8544:91;8537:98;;4361:4281;;;;;;;;;;:::o;1362:2580::-;1425:20;1457:15;1482:1;1475:4;:8;;;:57;;1526:4;1519:12;;1475:57;;;1502:4;1495:12;;1494:13;;1475:57;1457:75;;484:7;644:9;;1561:17;;1550:7;:28;;1542:42;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1595:13;1628:1;1621:3;1611:7;:13;:18;;:93;;1669:35;1611:93;;;1632:34;1611:93;1595:109;;;;1735:1;1728:3;1718:7;:13;:18;1714:83;;1794:3;1755:34;1747:5;:42;1746:51;;1738:59;;1714:83;1828:1;1821:3;1811:7;:13;:18;1807:83;;1887:3;1848:34;1840:5;:42;1839:51;;1831:59;;1807:83;1921:1;1914:3;1904:7;:13;:18;1900:83;;1980:3;1941:34;1933:5;:42;1932:51;;1924:59;;1900:83;2015:1;2007:4;1997:7;:14;:19;1993:84;;2074:3;2035:34;2027:5;:42;2026:51;;2018:59;;1993:84;2109:1;2101:4;2091:7;:14;:19;2087:84;;2168:3;2129:34;2121:5;:42;2120:51;;2112:59;;2087:84;2203:1;2195:4;2185:7;:14;:19;2181:84;;2262:3;2223:34;2215:5;:42;2214:51;;2206:59;;2181:84;2297:1;2289:4;2279:7;:14;:19;2275:84;;2356:3;2317:34;2309:5;:42;2308:51;;2300:59;;2275:84;2392:1;2383:5;2373:7;:15;:20;2369:85;;2451:3;2412:34;2404:5;:42;2403:51;;2395:59;;2369:85;2487:1;2478:5;2468:7;:15;:20;2464:85;;2546:3;2507:34;2499:5;:42;2498:51;;2490:59;;2464:85;2582:1;2573:5;2563:7;:15;:20;2559:85;;2641:3;2602:34;2594:5;:42;2593:51;;2585:59;;2559:85;2677:1;2668:5;2658:7;:15;:20;2654:85;;2736:3;2697:34;2689:5;:42;2688:51;;2680:59;;2654:85;2773:1;2763:6;2753:7;:16;:21;2749:86;;2832:3;2793:34;2785:5;:42;2784:51;;2776:59;;2749:86;2869:1;2859:6;2849:7;:16;:21;2845:86;;2928:3;2889:34;2881:5;:42;2880:51;;2872:59;;2845:86;2965:1;2955:6;2945:7;:16;:21;2941:86;;3024:3;2985:34;2977:5;:42;2976:51;;2968:59;;2941:86;3061:1;3051:6;3041:7;:16;:21;3037:86;;3120:3;3081:34;3073:5;:42;3072:51;;3064:59;;3037:86;3158:1;3147:7;3137;:17;:22;3133:86;;3216:3;3178:33;3170:5;:41;3169:50;;3161:58;;3133:86;3254:1;3243:7;3233;:17;:22;3229:85;;3311:3;3274:32;3266:5;:40;3265:49;;3257:57;;3229:85;3349:1;3338:7;3328;:17;:22;3324:83;;3404:3;3369:30;3361:5;:38;3360:47;;3352:55;;3324:83;3442:1;3431:7;3421;:17;:22;3417:78;;3492:3;3462:25;3454:5;:33;3453:42;;3445:50;;3417:78;3517:1;3510:4;:8;;;3506:47;;;3548:5;3528:17;:25;;;;;;3520:33;;3506:47;3924:1;3912:7;3903:5;:17;;;;;;:22;:30;;3932:1;3903:30;;;3928:1;3903:30;3886:48;;3896:2;3887:5;:11;;3886:48;3863:72;;1362:2580;;;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity =0.7.6;\n\nimport '../libraries/TickMath.sol';\n\ncontract TickMathTest {\n    function getSqrtRatioAtTick(int24 tick) external pure returns (uint160) {\n        return TickMath.getSqrtRatioAtTick(tick);\n    }\n\n    function getGasCostOfGetSqrtRatioAtTick(int24 tick) external view returns (uint256) {\n        uint256 gasBefore = gasleft();\n        TickMath.getSqrtRatioAtTick(tick);\n        return gasBefore - gasleft();\n    }\n\n    function getTickAtSqrtRatio(uint160 sqrtPriceX96) external pure returns (int24) {\n        return TickMath.getTickAtSqrtRatio(sqrtPriceX96);\n    }\n\n    function getGasCostOfGetTickAtSqrtRatio(uint160 sqrtPriceX96) external view returns (uint256) {\n        uint256 gasBefore = gasleft();\n        TickMath.getTickAtSqrtRatio(sqrtPriceX96);\n        return gasBefore - gasleft();\n    }\n\n    function MIN_SQRT_RATIO() external pure returns (uint160) {\n        return TickMath.MIN_SQRT_RATIO;\n    }\n\n    function MAX_SQRT_RATIO() external pure returns (uint160) {\n        return TickMath.MAX_SQRT_RATIO;\n    }\n}\n",
+  "sourcePath": "/mnt/c/pr0/blockchain-projects/DeFi_Learning/UniswapV3/UniswapV3Contracts/v3-core/contracts/test/TickMathTest.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/test/TickMathTest.sol",
+    "exportedSymbols": {
+      "TickMath": [
+        7170
+      ],
+      "TickMathTest": [
+        12393
+      ]
+    },
+    "id": 12394,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12299,
+        "literals": [
+          "solidity",
+          "=",
+          "0.7",
+          ".6"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:57"
+      },
+      {
+        "absolutePath": "project:/contracts/libraries/TickMath.sol",
+        "file": "../libraries/TickMath.sol",
+        "id": 12300,
+        "nodeType": "ImportDirective",
+        "scope": 12394,
+        "sourceUnit": 7171,
+        "src": "64:35:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 12393,
+        "linearizedBaseContracts": [
+          12393
+        ],
+        "name": "TickMathTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 12312,
+              "nodeType": "Block",
+              "src": "201:57:57",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12309,
+                        "name": "tick",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12302,
+                        "src": "246:4:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int24",
+                          "typeString": "int24"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_int24",
+                          "typeString": "int24"
+                        }
+                      ],
+                      "expression": {
+                        "id": 12307,
+                        "name": "TickMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7170,
+                        "src": "218:8:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_TickMath_$7170_$",
+                          "typeString": "type(library TickMath)"
+                        }
+                      },
+                      "id": 12308,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getSqrtRatioAtTick",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7030,
+                      "src": "218:27:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_int24_$returns$_t_uint160_$",
+                        "typeString": "function (int24) pure returns (uint160)"
+                      }
+                    },
+                    "id": 12310,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "218:33:57",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "functionReturnParameters": 12306,
+                  "id": 12311,
+                  "nodeType": "Return",
+                  "src": "211:40:57"
+                }
+              ]
+            },
+            "functionSelector": "986cfba3",
+            "id": 12313,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getSqrtRatioAtTick",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12303,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12302,
+                  "mutability": "mutable",
+                  "name": "tick",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12313,
+                  "src": "157:10:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 12301,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "157:5:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "156:12:57"
+            },
+            "returnParameters": {
+              "id": 12306,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12305,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12313,
+                  "src": "192:7:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 12304,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "192:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "191:9:57"
+            },
+            "scope": 12393,
+            "src": "129:129:57",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12336,
+              "nodeType": "Block",
+              "src": "348:127:57",
+              "statements": [
+                {
+                  "assignments": [
+                    12321
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12321,
+                      "mutability": "mutable",
+                      "name": "gasBefore",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12336,
+                      "src": "358:17:57",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12320,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "358:7:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12324,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 12322,
+                      "name": "gasleft",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967289,
+                      "src": "378:7:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 12323,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "378:9:57",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "358:29:57"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12328,
+                        "name": "tick",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12315,
+                        "src": "425:4:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_int24",
+                          "typeString": "int24"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_int24",
+                          "typeString": "int24"
+                        }
+                      ],
+                      "expression": {
+                        "id": 12325,
+                        "name": "TickMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7170,
+                        "src": "397:8:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_TickMath_$7170_$",
+                          "typeString": "type(library TickMath)"
+                        }
+                      },
+                      "id": 12327,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getSqrtRatioAtTick",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7030,
+                      "src": "397:27:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_int24_$returns$_t_uint160_$",
+                        "typeString": "function (int24) pure returns (uint160)"
+                      }
+                    },
+                    "id": 12329,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "397:33:57",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "id": 12330,
+                  "nodeType": "ExpressionStatement",
+                  "src": "397:33:57"
+                },
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12334,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12331,
+                      "name": "gasBefore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12321,
+                      "src": "447:9:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 12332,
+                        "name": "gasleft",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967289,
+                        "src": "459:7:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                          "typeString": "function () view returns (uint256)"
+                        }
+                      },
+                      "id": 12333,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "459:9:57",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "447:21:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 12319,
+                  "id": 12335,
+                  "nodeType": "Return",
+                  "src": "440:28:57"
+                }
+              ]
+            },
+            "functionSelector": "a7398eb4",
+            "id": 12337,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGasCostOfGetSqrtRatioAtTick",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12316,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12315,
+                  "mutability": "mutable",
+                  "name": "tick",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12337,
+                  "src": "304:10:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 12314,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "304:5:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "303:12:57"
+            },
+            "returnParameters": {
+              "id": 12319,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12318,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12337,
+                  "src": "339:7:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12317,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "339:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "338:9:57"
+            },
+            "scope": 12393,
+            "src": "264:211:57",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12349,
+              "nodeType": "Block",
+              "src": "561:65:57",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12346,
+                        "name": "sqrtPriceX96",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12339,
+                        "src": "606:12:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      ],
+                      "expression": {
+                        "id": 12344,
+                        "name": "TickMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7170,
+                        "src": "578:8:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_TickMath_$7170_$",
+                          "typeString": "type(library TickMath)"
+                        }
+                      },
+                      "id": 12345,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getTickAtSqrtRatio",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7169,
+                      "src": "578:27:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint160_$returns$_t_int24_$",
+                        "typeString": "function (uint160) pure returns (int24)"
+                      }
+                    },
+                    "id": 12347,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "578:41:57",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "functionReturnParameters": 12343,
+                  "id": 12348,
+                  "nodeType": "Return",
+                  "src": "571:48:57"
+                }
+              ]
+            },
+            "functionSelector": "4f76c058",
+            "id": 12350,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTickAtSqrtRatio",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12339,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceX96",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12350,
+                  "src": "509:20:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 12338,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "509:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "508:22:57"
+            },
+            "returnParameters": {
+              "id": 12343,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12342,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12350,
+                  "src": "554:5:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int24",
+                    "typeString": "int24"
+                  },
+                  "typeName": {
+                    "id": 12341,
+                    "name": "int24",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "554:5:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "553:7:57"
+            },
+            "scope": 12393,
+            "src": "481:145:57",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12373,
+              "nodeType": "Block",
+              "src": "726:135:57",
+              "statements": [
+                {
+                  "assignments": [
+                    12358
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 12358,
+                      "mutability": "mutable",
+                      "name": "gasBefore",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 12373,
+                      "src": "736:17:57",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 12357,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "736:7:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 12361,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 12359,
+                      "name": "gasleft",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967289,
+                      "src": "756:7:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 12360,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "756:9:57",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "736:29:57"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 12365,
+                        "name": "sqrtPriceX96",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 12352,
+                        "src": "803:12:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint160",
+                          "typeString": "uint160"
+                        }
+                      ],
+                      "expression": {
+                        "id": 12362,
+                        "name": "TickMath",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 7170,
+                        "src": "775:8:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_TickMath_$7170_$",
+                          "typeString": "type(library TickMath)"
+                        }
+                      },
+                      "id": 12364,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getTickAtSqrtRatio",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 7169,
+                      "src": "775:27:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_uint160_$returns$_t_int24_$",
+                        "typeString": "function (uint160) pure returns (int24)"
+                      }
+                    },
+                    "id": 12366,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "775:41:57",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int24",
+                      "typeString": "int24"
+                    }
+                  },
+                  "id": 12367,
+                  "nodeType": "ExpressionStatement",
+                  "src": "775:41:57"
+                },
+                {
+                  "expression": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 12371,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 12368,
+                      "name": "gasBefore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12358,
+                      "src": "833:9:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "-",
+                    "rightExpression": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "id": 12369,
+                        "name": "gasleft",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967289,
+                        "src": "845:7:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_gasleft_view$__$returns$_t_uint256_$",
+                          "typeString": "function () view returns (uint256)"
+                        }
+                      },
+                      "id": 12370,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "845:9:57",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "833:21:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 12356,
+                  "id": 12372,
+                  "nodeType": "Return",
+                  "src": "826:28:57"
+                }
+              ]
+            },
+            "functionSelector": "b0622f67",
+            "id": 12374,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGasCostOfGetTickAtSqrtRatio",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12353,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12352,
+                  "mutability": "mutable",
+                  "name": "sqrtPriceX96",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12374,
+                  "src": "672:20:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 12351,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "672:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "671:22:57"
+            },
+            "returnParameters": {
+              "id": 12356,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12355,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12374,
+                  "src": "717:7:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12354,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "717:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "716:9:57"
+            },
+            "scope": 12393,
+            "src": "632:229:57",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12382,
+              "nodeType": "Block",
+              "src": "925:47:57",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 12379,
+                      "name": "TickMath",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7170,
+                      "src": "942:8:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_TickMath_$7170_$",
+                        "typeString": "type(library TickMath)"
+                      }
+                    },
+                    "id": 12380,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "MIN_SQRT_RATIO",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 6652,
+                    "src": "942:23:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "functionReturnParameters": 12378,
+                  "id": 12381,
+                  "nodeType": "Return",
+                  "src": "935:30:57"
+                }
+              ]
+            },
+            "functionSelector": "ee8847ff",
+            "id": 12383,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "MIN_SQRT_RATIO",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12375,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "890:2:57"
+            },
+            "returnParameters": {
+              "id": 12378,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12377,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12383,
+                  "src": "916:7:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 12376,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "916:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "915:9:57"
+            },
+            "scope": 12393,
+            "src": "867:105:57",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 12391,
+              "nodeType": "Block",
+              "src": "1036:47:57",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "id": 12388,
+                      "name": "TickMath",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 7170,
+                      "src": "1053:8:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_TickMath_$7170_$",
+                        "typeString": "type(library TickMath)"
+                      }
+                    },
+                    "id": 12389,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "MAX_SQRT_RATIO",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 6656,
+                    "src": "1053:23:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "functionReturnParameters": 12387,
+                  "id": 12390,
+                  "nodeType": "Return",
+                  "src": "1046:30:57"
+                }
+              ]
+            },
+            "functionSelector": "6d2cc304",
+            "id": 12392,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "MAX_SQRT_RATIO",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12384,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1001:2:57"
+            },
+            "returnParameters": {
+              "id": 12387,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12386,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12392,
+                  "src": "1027:7:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint160",
+                    "typeString": "uint160"
+                  },
+                  "typeName": {
+                    "id": 12385,
+                    "name": "uint160",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1027:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint160",
+                      "typeString": "uint160"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1026:9:57"
+            },
+            "scope": 12393,
+            "src": "978:105:57",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12394,
+        "src": "101:984:57"
+      }
+    ],
+    "src": "39:1047:57"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/test/TickMathTest.sol",
+      "exportedSymbols": {
+        "TickMath": [
+          7170
+        ],
+        "TickMathTest": [
+          12393
+        ]
+      },
+      "license": "UNLICENSED"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "=",
+            "0.7",
+            ".6"
+          ]
+        },
+        "id": 12299,
+        "name": "PragmaDirective",
+        "src": "39:23:57"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 7171,
+          "absolutePath": "project:/contracts/libraries/TickMath.sol",
+          "file": "../libraries/TickMath.sol",
+          "scope": 12394,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 12300,
+        "name": "ImportDirective",
+        "src": "64:35:57"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            12393
+          ],
+          "name": "TickMathTest",
+          "scope": 12394
+        },
+        "children": [
+          {
+            "attributes": {
+              "functionSelector": "986cfba3",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getSqrtRatioAtTick",
+              "scope": 12393,
+              "stateMutability": "pure",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tick",
+                      "scope": 12313,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 12301,
+                        "name": "ElementaryTypeName",
+                        "src": "157:5:57"
+                      }
+                    ],
+                    "id": 12302,
+                    "name": "VariableDeclaration",
+                    "src": "157:10:57"
+                  }
+                ],
+                "id": 12303,
+                "name": "ParameterList",
+                "src": "156:12:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 12313,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 12304,
+                        "name": "ElementaryTypeName",
+                        "src": "192:7:57"
+                      }
+                    ],
+                    "id": 12305,
+                    "name": "VariableDeclaration",
+                    "src": "192:7:57"
+                  }
+                ],
+                "id": 12306,
+                "name": "ParameterList",
+                "src": "191:9:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12306
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint160",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_int24",
+                                  "typeString": "int24"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "getSqrtRatioAtTick",
+                              "referencedDeclaration": 7030,
+                              "type": "function (int24) pure returns (uint160)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7170,
+                                  "type": "type(library TickMath)",
+                                  "value": "TickMath"
+                                },
+                                "id": 12307,
+                                "name": "Identifier",
+                                "src": "218:8:57"
+                              }
+                            ],
+                            "id": 12308,
+                            "name": "MemberAccess",
+                            "src": "218:27:57"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12302,
+                              "type": "int24",
+                              "value": "tick"
+                            },
+                            "id": 12309,
+                            "name": "Identifier",
+                            "src": "246:4:57"
+                          }
+                        ],
+                        "id": 12310,
+                        "name": "FunctionCall",
+                        "src": "218:33:57"
+                      }
+                    ],
+                    "id": 12311,
+                    "name": "Return",
+                    "src": "211:40:57"
+                  }
+                ],
+                "id": 12312,
+                "name": "Block",
+                "src": "201:57:57"
+              }
+            ],
+            "id": 12313,
+            "name": "FunctionDefinition",
+            "src": "129:129:57"
+          },
+          {
+            "attributes": {
+              "functionSelector": "a7398eb4",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getGasCostOfGetSqrtRatioAtTick",
+              "scope": 12393,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "tick",
+                      "scope": 12337,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 12314,
+                        "name": "ElementaryTypeName",
+                        "src": "304:5:57"
+                      }
+                    ],
+                    "id": 12315,
+                    "name": "VariableDeclaration",
+                    "src": "304:10:57"
+                  }
+                ],
+                "id": 12316,
+                "name": "ParameterList",
+                "src": "303:12:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 12337,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12317,
+                        "name": "ElementaryTypeName",
+                        "src": "339:7:57"
+                      }
+                    ],
+                    "id": 12318,
+                    "name": "VariableDeclaration",
+                    "src": "339:7:57"
+                  }
+                ],
+                "id": 12319,
+                "name": "ParameterList",
+                "src": "338:9:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        12321
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "gasBefore",
+                          "scope": 12336,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 12320,
+                            "name": "ElementaryTypeName",
+                            "src": "358:7:57"
+                          }
+                        ],
+                        "id": 12321,
+                        "name": "VariableDeclaration",
+                        "src": "358:17:57"
+                      },
+                      {
+                        "attributes": {
+                          "arguments": [
+                            null
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                null
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4294967289,
+                              "type": "function () view returns (uint256)",
+                              "value": "gasleft"
+                            },
+                            "id": 12322,
+                            "name": "Identifier",
+                            "src": "378:7:57"
+                          }
+                        ],
+                        "id": 12323,
+                        "name": "FunctionCall",
+                        "src": "378:9:57"
+                      }
+                    ],
+                    "id": 12324,
+                    "name": "VariableDeclarationStatement",
+                    "src": "358:29:57"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint160",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_int24",
+                                  "typeString": "int24"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "getSqrtRatioAtTick",
+                              "referencedDeclaration": 7030,
+                              "type": "function (int24) pure returns (uint160)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7170,
+                                  "type": "type(library TickMath)",
+                                  "value": "TickMath"
+                                },
+                                "id": 12325,
+                                "name": "Identifier",
+                                "src": "397:8:57"
+                              }
+                            ],
+                            "id": 12327,
+                            "name": "MemberAccess",
+                            "src": "397:27:57"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12315,
+                              "type": "int24",
+                              "value": "tick"
+                            },
+                            "id": 12328,
+                            "name": "Identifier",
+                            "src": "425:4:57"
+                          }
+                        ],
+                        "id": 12329,
+                        "name": "FunctionCall",
+                        "src": "397:33:57"
+                      }
+                    ],
+                    "id": 12330,
+                    "name": "ExpressionStatement",
+                    "src": "397:33:57"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12319
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "-",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12321,
+                              "type": "uint256",
+                              "value": "gasBefore"
+                            },
+                            "id": 12331,
+                            "name": "Identifier",
+                            "src": "447:9:57"
+                          },
+                          {
+                            "attributes": {
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4294967289,
+                                  "type": "function () view returns (uint256)",
+                                  "value": "gasleft"
+                                },
+                                "id": 12332,
+                                "name": "Identifier",
+                                "src": "459:7:57"
+                              }
+                            ],
+                            "id": 12333,
+                            "name": "FunctionCall",
+                            "src": "459:9:57"
+                          }
+                        ],
+                        "id": 12334,
+                        "name": "BinaryOperation",
+                        "src": "447:21:57"
+                      }
+                    ],
+                    "id": 12335,
+                    "name": "Return",
+                    "src": "440:28:57"
+                  }
+                ],
+                "id": 12336,
+                "name": "Block",
+                "src": "348:127:57"
+              }
+            ],
+            "id": 12337,
+            "name": "FunctionDefinition",
+            "src": "264:211:57"
+          },
+          {
+            "attributes": {
+              "functionSelector": "4f76c058",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getTickAtSqrtRatio",
+              "scope": 12393,
+              "stateMutability": "pure",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPriceX96",
+                      "scope": 12350,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 12338,
+                        "name": "ElementaryTypeName",
+                        "src": "509:7:57"
+                      }
+                    ],
+                    "id": 12339,
+                    "name": "VariableDeclaration",
+                    "src": "509:20:57"
+                  }
+                ],
+                "id": 12340,
+                "name": "ParameterList",
+                "src": "508:22:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 12350,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "int24",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "int24",
+                          "type": "int24"
+                        },
+                        "id": 12341,
+                        "name": "ElementaryTypeName",
+                        "src": "554:5:57"
+                      }
+                    ],
+                    "id": 12342,
+                    "name": "VariableDeclaration",
+                    "src": "554:5:57"
+                  }
+                ],
+                "id": 12343,
+                "name": "ParameterList",
+                "src": "553:7:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12343
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "int24",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint160",
+                                  "typeString": "uint160"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "getTickAtSqrtRatio",
+                              "referencedDeclaration": 7169,
+                              "type": "function (uint160) pure returns (int24)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7170,
+                                  "type": "type(library TickMath)",
+                                  "value": "TickMath"
+                                },
+                                "id": 12344,
+                                "name": "Identifier",
+                                "src": "578:8:57"
+                              }
+                            ],
+                            "id": 12345,
+                            "name": "MemberAccess",
+                            "src": "578:27:57"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12339,
+                              "type": "uint160",
+                              "value": "sqrtPriceX96"
+                            },
+                            "id": 12346,
+                            "name": "Identifier",
+                            "src": "606:12:57"
+                          }
+                        ],
+                        "id": 12347,
+                        "name": "FunctionCall",
+                        "src": "578:41:57"
+                      }
+                    ],
+                    "id": 12348,
+                    "name": "Return",
+                    "src": "571:48:57"
+                  }
+                ],
+                "id": 12349,
+                "name": "Block",
+                "src": "561:65:57"
+              }
+            ],
+            "id": 12350,
+            "name": "FunctionDefinition",
+            "src": "481:145:57"
+          },
+          {
+            "attributes": {
+              "functionSelector": "b0622f67",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getGasCostOfGetTickAtSqrtRatio",
+              "scope": 12393,
+              "stateMutability": "view",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "sqrtPriceX96",
+                      "scope": 12374,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 12351,
+                        "name": "ElementaryTypeName",
+                        "src": "672:7:57"
+                      }
+                    ],
+                    "id": 12352,
+                    "name": "VariableDeclaration",
+                    "src": "672:20:57"
+                  }
+                ],
+                "id": 12353,
+                "name": "ParameterList",
+                "src": "671:22:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 12374,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 12354,
+                        "name": "ElementaryTypeName",
+                        "src": "717:7:57"
+                      }
+                    ],
+                    "id": 12355,
+                    "name": "VariableDeclaration",
+                    "src": "717:7:57"
+                  }
+                ],
+                "id": 12356,
+                "name": "ParameterList",
+                "src": "716:9:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        12358
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "gasBefore",
+                          "scope": 12373,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 12357,
+                            "name": "ElementaryTypeName",
+                            "src": "736:7:57"
+                          }
+                        ],
+                        "id": 12358,
+                        "name": "VariableDeclaration",
+                        "src": "736:17:57"
+                      },
+                      {
+                        "attributes": {
+                          "arguments": [
+                            null
+                          ],
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                null
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4294967289,
+                              "type": "function () view returns (uint256)",
+                              "value": "gasleft"
+                            },
+                            "id": 12359,
+                            "name": "Identifier",
+                            "src": "756:7:57"
+                          }
+                        ],
+                        "id": 12360,
+                        "name": "FunctionCall",
+                        "src": "756:9:57"
+                      }
+                    ],
+                    "id": 12361,
+                    "name": "VariableDeclarationStatement",
+                    "src": "736:29:57"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "int24",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint160",
+                                  "typeString": "uint160"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "getTickAtSqrtRatio",
+                              "referencedDeclaration": 7169,
+                              "type": "function (uint160) pure returns (int24)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 7170,
+                                  "type": "type(library TickMath)",
+                                  "value": "TickMath"
+                                },
+                                "id": 12362,
+                                "name": "Identifier",
+                                "src": "775:8:57"
+                              }
+                            ],
+                            "id": 12364,
+                            "name": "MemberAccess",
+                            "src": "775:27:57"
+                          },
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12352,
+                              "type": "uint160",
+                              "value": "sqrtPriceX96"
+                            },
+                            "id": 12365,
+                            "name": "Identifier",
+                            "src": "803:12:57"
+                          }
+                        ],
+                        "id": 12366,
+                        "name": "FunctionCall",
+                        "src": "775:41:57"
+                      }
+                    ],
+                    "id": 12367,
+                    "name": "ExpressionStatement",
+                    "src": "775:41:57"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12356
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "-",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12358,
+                              "type": "uint256",
+                              "value": "gasBefore"
+                            },
+                            "id": 12368,
+                            "name": "Identifier",
+                            "src": "833:9:57"
+                          },
+                          {
+                            "attributes": {
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4294967289,
+                                  "type": "function () view returns (uint256)",
+                                  "value": "gasleft"
+                                },
+                                "id": 12369,
+                                "name": "Identifier",
+                                "src": "845:7:57"
+                              }
+                            ],
+                            "id": 12370,
+                            "name": "FunctionCall",
+                            "src": "845:9:57"
+                          }
+                        ],
+                        "id": 12371,
+                        "name": "BinaryOperation",
+                        "src": "833:21:57"
+                      }
+                    ],
+                    "id": 12372,
+                    "name": "Return",
+                    "src": "826:28:57"
+                  }
+                ],
+                "id": 12373,
+                "name": "Block",
+                "src": "726:135:57"
+              }
+            ],
+            "id": 12374,
+            "name": "FunctionDefinition",
+            "src": "632:229:57"
+          },
+          {
+            "attributes": {
+              "functionSelector": "ee8847ff",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "MIN_SQRT_RATIO",
+              "scope": 12393,
+              "stateMutability": "pure",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 12375,
+                "name": "ParameterList",
+                "src": "890:2:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 12383,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 12376,
+                        "name": "ElementaryTypeName",
+                        "src": "916:7:57"
+                      }
+                    ],
+                    "id": 12377,
+                    "name": "VariableDeclaration",
+                    "src": "916:7:57"
+                  }
+                ],
+                "id": 12378,
+                "name": "ParameterList",
+                "src": "915:9:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12378
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "MIN_SQRT_RATIO",
+                          "referencedDeclaration": 6652,
+                          "type": "uint160"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7170,
+                              "type": "type(library TickMath)",
+                              "value": "TickMath"
+                            },
+                            "id": 12379,
+                            "name": "Identifier",
+                            "src": "942:8:57"
+                          }
+                        ],
+                        "id": 12380,
+                        "name": "MemberAccess",
+                        "src": "942:23:57"
+                      }
+                    ],
+                    "id": 12381,
+                    "name": "Return",
+                    "src": "935:30:57"
+                  }
+                ],
+                "id": 12382,
+                "name": "Block",
+                "src": "925:47:57"
+              }
+            ],
+            "id": 12383,
+            "name": "FunctionDefinition",
+            "src": "867:105:57"
+          },
+          {
+            "attributes": {
+              "functionSelector": "6d2cc304",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "MAX_SQRT_RATIO",
+              "scope": 12393,
+              "stateMutability": "pure",
+              "virtual": false,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 12384,
+                "name": "ParameterList",
+                "src": "1001:2:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "scope": 12392,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint160",
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint160",
+                          "type": "uint160"
+                        },
+                        "id": 12385,
+                        "name": "ElementaryTypeName",
+                        "src": "1027:7:57"
+                      }
+                    ],
+                    "id": 12386,
+                    "name": "VariableDeclaration",
+                    "src": "1027:7:57"
+                  }
+                ],
+                "id": 12387,
+                "name": "ParameterList",
+                "src": "1026:9:57"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 12387
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "MAX_SQRT_RATIO",
+                          "referencedDeclaration": 6656,
+                          "type": "uint160"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 7170,
+                              "type": "type(library TickMath)",
+                              "value": "TickMath"
+                            },
+                            "id": 12388,
+                            "name": "Identifier",
+                            "src": "1053:8:57"
+                          }
+                        ],
+                        "id": 12389,
+                        "name": "MemberAccess",
+                        "src": "1053:23:57"
+                      }
+                    ],
+                    "id": 12390,
+                    "name": "Return",
+                    "src": "1046:30:57"
+                  }
+                ],
+                "id": 12391,
+                "name": "Block",
+                "src": "1036:47:57"
+              }
+            ],
+            "id": 12392,
+            "name": "FunctionDefinition",
+            "src": "978:105:57"
+          }
+        ],
+        "id": 12393,
+        "name": "ContractDefinition",
+        "src": "101:984:57"
+      }
+    ],
+    "id": 12394,
+    "name": "SourceUnit",
+    "src": "39:1047:57"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.6+commit.7338295f.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-10-07T19:09:47.898Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

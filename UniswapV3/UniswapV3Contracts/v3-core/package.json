@@ -1,0 +1,25 @@
+{
+  "name": "uniswap3contracts",
+  "version": "1.0.0",
+  "description": "Uniswap V3 Contracts - Adapted the files structure to deploy the uniswap contracts in a localhost using ganache",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uniswap/v3-core.git"
+  },
+  "keywords": [
+    "uniswapv3"
+  ],
+  "author": "Stalin Macias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uniswap/v3-core/issues"
+  },
+  "homepage": "https://github.com/Uniswap/v3-core#readme"
+}
